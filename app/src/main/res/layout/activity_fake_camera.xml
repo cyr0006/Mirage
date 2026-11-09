@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Per SPEC.md "Key decisions": output is drawn here by FrameRenderer onto this
+    SurfaceView. Do not add a PreviewView — CameraX's own preview frames are not
+    synced with the ImageAnalysis frames this app composites onto.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Fake stock-camera chrome overlay goes here (Build order step 7). -->
+    <FrameLayout
+        android:id="@+id/fakeChromeContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>

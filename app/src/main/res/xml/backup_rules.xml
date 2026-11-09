@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- No user data to back up yet; ForceState (SharedPreferences) will need an
+         explicit exclude once it exists, so a restore can't reveal the forced card. -->
+</full-backup-content>

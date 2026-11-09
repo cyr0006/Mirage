@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.Mirage" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
+
+    <!-- Base for FakeCameraActivity. Full immersive (hiding status/nav bars) is
+         finished in code via WindowInsetsController, not achievable from theme alone. -->
+    <style name="Theme.Mirage.FullScreen">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@color/black</item>
+    </style>
+</resources>
