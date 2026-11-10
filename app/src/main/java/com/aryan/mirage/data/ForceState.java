@@ -8,7 +8,10 @@ import android.content.SharedPreferences;
  * SharedPreferences. See SPEC.md "2. SettingsActivity".
  */
 public class ForceState {
-
+    private static final String KEY_MODE = "mode";
+    private static final String KEY_TRIGGER = "trigger";
+    public static final String KEY_RANK = "forces_rank";
+    public static final String KEY_SUIT = "forced_suit";
     private static final String PREFS_NAME = "force_state";
 
     public enum Mode { FIXED_OVERLAY, TRACKED, REAL }
@@ -23,30 +26,34 @@ public class ForceState {
     }
 
     public Card getForcedCard() {
-        // TODO (Milestone 3): read rank/suit keys, default to a sensible card.
-        return null;
+        String rankCode = prefs.getString(KEY_RANK, Card.Rank.ACE.code);
+        String suitCode = prefs.getString(KEY_SUIT, Card.Suit.SPADES.code);
+        return new Card(Card.Rank.fromCode(rankCode), Card.Suit.fromCode(suitCode));
     }
 
     public void setForcedCard(Card card) {
-        // TODO (Milestone 3): persist rank/suit keys.
+        prefs.edit()
+                .putString(KEY_RANK, card.rank.code)
+                .putString(KEY_SUIT, card.suit.code)
+                .apply();
     }
 
     public Mode getMode() {
-        // TODO (Milestone 3): read + parse, default FIXED_OVERLAY.
-        return Mode.FIXED_OVERLAY;
+        String value = prefs.getString(KEY_MODE, Mode.FIXED_OVERLAY.name());
+        return Mode.valueOf(value);
     }
 
     public void setMode(Mode mode) {
-        // TODO (Milestone 3): persist.
+        prefs.edit().putString(KEY_MODE, mode.name()).apply();
     }
 
     public Trigger getTrigger() {
-        // TODO (Milestone 3): read + parse, default MANUAL.
-        return Trigger.MANUAL;
+        String value = prefs.getString(KEY_TRIGGER, Trigger.MANUAL.name());
+        return Trigger.valueOf(value);
     }
 
     public void setTrigger(Trigger trigger) {
-        // TODO (Milestone 3): persist.
+        prefs.edit().putString(KEY_TRIGGER, trigger.name()).apply();
     }
 
     // TODO: overlay blur, overlay scale/position, detection sensitivity, debug-overlay

@@ -15,6 +15,13 @@ public class Card {
         Rank(String code) {
             this.code = code;
         }
+
+        public static Rank fromCode(String code){
+            for (Rank r: values()){
+                if  (r.code.equals(code)) return r;
+            }
+            throw new IllegalArgumentException(("Unknown rank code: " + code));
+        }
     }
 
     public enum Suit {
@@ -24,6 +31,13 @@ public class Card {
 
         Suit(String code) {
             this.code = code;
+        }
+
+        public static Suit fromCode(String code){
+            for (Suit s: values()){
+                if  (s.code.equals(code)) return s;
+            }
+            throw new IllegalArgumentException(("Unknown suit code: " + code));
         }
     }
 
