@@ -81,6 +81,15 @@ Full detail on each milestone, acceptance criteria, and known risks: see
 `KD.png`. Placeholder-only until the magician's actual deck is photographed;
 see [`app/src/main/assets/cards/README.md`](app/src/main/assets/cards/README.md).
 
+## Design decisions
+
+- **`CardRepository` caches decoded `Bitmap`s in memory, keyed by filename.**
+  Decoding a PNG from `assets/` is disk + CPU work; the compositor will end up
+  asking for the forced card's bitmap on every frame or trigger once Mode
+  A/B are live, and the app needs to sustain ≥24 fps (see acceptance criteria
+  in `CLAUDE.md`). Decoding once and reusing the `Bitmap` avoids repeating
+  that work dozens of times a second.
+
 ## Working agreement
 
 This project is being built with Claude Code as a step-by-step guide, not an
