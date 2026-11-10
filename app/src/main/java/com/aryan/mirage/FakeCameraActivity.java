@@ -1,6 +1,7 @@
 package com.aryan.mirage;
 
 import android.os.Bundle;
+import android.view.SurfaceView;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
 import android.view.WindowManager;
@@ -13,6 +14,7 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 
 import com.aryan.mirage.camera.CameraController;
+import com.aryan.mirage.camera.FrameProcessor;
 import com.aryan.mirage.camera.FrameRenderer;
 import com.aryan.mirage.controls.HiddenControls;
 import com.aryan.mirage.data.ForceState;
@@ -56,8 +58,21 @@ public class FakeCameraActivity extends AppCompatActivity {
     }
 
     private void startCamera() {
-        // TODO (Milestone 2): bind CameraController to the SurfaceView via FrameRenderer.
         // Do not use PreviewView here — see SPEC.md "Key decisions".
+        SurfaceView surfaceView = findViewById(R.id.surfaceView);
+        frameRenderer = new FrameRenderer(surfaceView);
+        // CardDetector/CardCompositor plug in at Milestone 4/5 — unused for now.
+        FrameProcessor frameProcessor = new FrameProcessor(null, null, frameRenderer);
+        cameraController = new CameraController(this, this);
+        cameraController.start(frameProcessor);
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (cameraController != null) {
+            cameraController.stop();
+        }
+        super.onDestroy();
     }
 
     private void enterImmersiveMode() {
