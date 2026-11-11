@@ -56,6 +56,17 @@ public class ForceState {
         prefs.edit().putString(KEY_TRIGGER, trigger.name()).apply();
     }
 
+    public void stepForcedCard(int direction){
+        Card current = getForcedCard();
+        Card.Rank[] ranks = Card.Rank.values();
+        Card.Suit[] suits = Card.Suit.values();
+        int index = current.suit.ordinal() * ranks.length + current.rank.ordinal();
+        int total = ranks.length * suits.length;
+        index = (index + direction + total) % total;
+        setForcedCard(new Card(ranks[index % ranks.length], suits[index / ranks.length]));
+
+    }
+
     // TODO: overlay blur, overlay scale/position, detection sensitivity, debug-overlay
     // toggle — same read/persist pattern as above, added as each milestone needs them.
 }

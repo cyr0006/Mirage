@@ -1,6 +1,8 @@
 package com.aryan.mirage;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.SurfaceView;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
@@ -22,7 +24,7 @@ import com.aryan.mirage.data.ForceState;
 /**
  * Launcher activity. See SPEC.md "1. FakeCameraActivity" and the architecture diagram.
  */
-public class FakeCameraActivity extends AppCompatActivity {
+public class FakeCameraActivity extends AppCompatActivity implements HiddenControls.Listener  {
 
     private final ActivityResultLauncher<String> cameraPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), granted -> {
@@ -53,8 +55,7 @@ public class FakeCameraActivity extends AppCompatActivity {
             cameraPermissionLauncher.launch(Manifest.permission.CAMERA);
         }
 
-        // TODO (Milestone 3): wire up HiddenControls — long-press top-left (2s) -> Settings,
-        // volume up/down -> step forced card.
+        hiddenControls = new HiddenControls(this);
     }
 
     private void startCamera() {
@@ -75,6 +76,28 @@ public class FakeCameraActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event ){
+        if (hiddenControls.onKeyDown(keyCode, event)){
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public void onNextCard(){
+        forceState.stepForcedCard(1);
+    }
+
+    @Override
+    public void onPreviousCard(){
+        forceState.stepForcedCard(-1);
+    }
+
+    @Override
+    public void onOpenSettingsRequested(){
+        startActivity(new Intent(this, SettingsActivity.class));
+    }
     private void enterImmersiveMode() {
         WindowInsetsController controller = getWindow().getInsetsController();
         if (controller != null) {
