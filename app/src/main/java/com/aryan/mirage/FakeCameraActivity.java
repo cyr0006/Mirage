@@ -56,6 +56,7 @@ public class FakeCameraActivity extends AppCompatActivity implements HiddenContr
         }
 
         hiddenControls = new HiddenControls(this);
+        hiddenControls.attachTo(findViewById(R.id.surfaceView).getRootView());
     }
 
     private void startCamera() {
