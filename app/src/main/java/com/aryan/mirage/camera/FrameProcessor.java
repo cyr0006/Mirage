@@ -1,7 +1,10 @@
 package com.aryan.mirage.camera;
 
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
+import android.graphics.Paint;
 import android.os.SystemClock;
 
 import androidx.camera.core.ImageProxy;
@@ -12,23 +15,19 @@ import com.aryan.mirage.data.CardRepository;
 import com.aryan.mirage.data.ForceState;
 import com.aryan.mirage.detect.CardDetector;
 
+import org.opencv.android.Utils;
+import org.opencv.core.Mat;
+
 import java.nio.ByteBuffer;
 
 /**
  * Per-frame pipeline: mirror -> detect -> composite. See SPEC.md "Key decisions"
  * (manual mirroring, rotation via imageInfo.getRotationDegrees()) and Modes A/B.
- *
- * Milestone 2 only needs a correctly oriented, mirrored frame on screen — detection
- * (CardDetector) isn't called yet, which is why callers can pass null for it until
- * Milestone 5.
  */
 public class FrameProcessor {
 
-    // Temporary hardcoded values — become Settings sliders once overlay scale/position/
-    // blur sliders are wired up (SPEC.md "2. SettingsActivity").
-    private static final float FIXED_SCALE = 0.4f;
-    private static final float FIXED_BLUR = 0.3f;
     private static final long FADE_IN_MS = 120;
+    private static final long FPS_UPDATE_INTERVAL_MS = 1000;
 
     private final CardDetector cardDetector;
     private final CardCompositor cardCompositor;
@@ -36,8 +35,16 @@ public class FrameProcessor {
     private final CardRepository cardRepository;
     private final ForceState forceState;
 
+    // Reused across frames for the Bitmap -> Mat conversion -- see SPEC.md "Known risks"
+    // (don't allocate buffers per frame).
+    private final Mat frameMat = new Mat();
+
     private boolean overlayVisible = false;
     private long overlayShownAtMs = 0;
+
+    private int framesSinceFpsUpdate = 0;
+    private long lastFpsUpdateMs = 0;
+    private float currentFps = 0f;
 
     public FrameProcessor(CardDetector cardDetector, CardCompositor cardCompositor,
                            FrameRenderer frameRenderer, CardRepository cardRepository,
@@ -66,13 +73,29 @@ public class FrameProcessor {
             Bitmap oriented = mirrorAndRotate(raw, image.getImageInfo().getRotationDegrees());
             raw.recycle();
 
-            if (overlayVisible && forceState.getMode() == ForceState.Mode.FIXED_OVERLAY) {
+            ForceState.Mode mode = forceState.getMode();
+            if (mode == ForceState.Mode.FIXED_OVERLAY && overlayVisible) {
                 Card forcedCard = forceState.getForcedCard();
                 Bitmap card = cardRepository.getBitmap(forcedCard);
                 long elapsedMs = SystemClock.elapsedRealtime() - overlayShownAtMs;
                 float alpha = Math.min(1f, elapsedMs / (float) FADE_IN_MS);
-                cardCompositor.compositeFixed(
-                        oriented, card, forcedCard.toString(), FIXED_SCALE, FIXED_BLUR, alpha);
+                cardCompositor.compositeFixed(oriented, card, forcedCard.toString(),
+                        forceState.getOverlayScale(), forceState.getOverlayBlur(), alpha);
+            } else if (mode == ForceState.Mode.TRACKED) {
+                cardDetector.setSensitivity(forceState.getDetectionSensitivity());
+                Utils.bitmapToMat(oriented, frameMat);
+                CardDetector.Quad quad = cardDetector.detect(frameMat);
+                if (quad != null) {
+                    Card forcedCard = forceState.getForcedCard();
+                    Bitmap card = cardRepository.getBitmap(forcedCard);
+                    cardCompositor.compositeTracked(frameMat, card, forcedCard.toString(), quad);
+                    Utils.matToBitmap(frameMat, oriented);
+                }
+            }
+
+            updateFps();
+            if (forceState.isDebugOverlayEnabled()) {
+                drawFpsCounter(oriented, currentFps);
             }
 
             frameRenderer.render(oriented);

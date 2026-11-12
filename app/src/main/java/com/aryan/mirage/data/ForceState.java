@@ -12,7 +12,17 @@ public class ForceState {
     private static final String KEY_TRIGGER = "trigger";
     public static final String KEY_RANK = "forces_rank";
     public static final String KEY_SUIT = "forced_suit";
+    private static final String KEY_OVERLAY_BLUR = "overlay_blur";
+    private static final String KEY_OVERLAY_SCALE = "overlay_scale";
+    private static final String KEY_DETECTION_SENSITIVITY = "detection_sensitivity";
+    private static final String KEY_DEBUG_OVERLAY = "debug_overlay";
     private static final String PREFS_NAME = "force_state";
+
+    // Defaults match what FrameProcessor had hardcoded before these sliders existed, so
+    // wiring them doesn't change behavior for anyone who hasn't touched Settings yet.
+    private static final float DEFAULT_OVERLAY_BLUR = 0.3f;
+    private static final float DEFAULT_OVERLAY_SCALE = 0.4f;
+    private static final float DEFAULT_DETECTION_SENSITIVITY = 0.5f;
 
     public enum Mode { FIXED_OVERLAY, TRACKED, REAL }
 
@@ -66,6 +76,40 @@ public class ForceState {
         setForcedCard(new Card(ranks[index % ranks.length], suits[index / ranks.length]));
     }
 
-    // TODO: overlay blur, overlay scale/position, detection sensitivity, debug-overlay
-    // toggle — same read/persist pattern as above, added as each milestone needs them.
+    public float getOverlayBlur() {
+        return prefs.getFloat(KEY_OVERLAY_BLUR, DEFAULT_OVERLAY_BLUR);
+    }
+
+    public void setOverlayBlur(float blur) {
+        prefs.edit().putFloat(KEY_OVERLAY_BLUR, blur).apply();
+    }
+
+    public float getOverlayScale() {
+        return prefs.getFloat(KEY_OVERLAY_SCALE, DEFAULT_OVERLAY_SCALE);
+    }
+
+    public void setOverlayScale(float scale) {
+        prefs.edit().putFloat(KEY_OVERLAY_SCALE, scale).apply();
+    }
+
+    /** 0-1, where 0.5 (the default) reproduces CardDetector's original hardcoded
+     * thresholds; higher values accept smaller/more marginal detections. */
+    public float getDetectionSensitivity() {
+        return prefs.getFloat(KEY_DETECTION_SENSITIVITY, DEFAULT_DETECTION_SENSITIVITY);
+    }
+
+    public void setDetectionSensitivity(float sensitivity) {
+        prefs.edit().putFloat(KEY_DETECTION_SENSITIVITY, sensitivity).apply();
+    }
+
+    public boolean isDebugOverlayEnabled() {
+        return prefs.getBoolean(KEY_DEBUG_OVERLAY, false);
+    }
+
+    public void setDebugOverlayEnabled(boolean enabled) {
+        prefs.edit().putBoolean(KEY_DEBUG_OVERLAY, enabled).apply();
+    }
+
+    // TODO: overlay position slider, if that turns out to be needed once the fake
+    // camera UI (Milestone 7) fixes exactly where the lens sits on screen.
 }

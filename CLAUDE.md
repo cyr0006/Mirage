@@ -3,10 +3,9 @@
 Hand this file to Claude at the start of a development session (or drop it in the repo root as `CLAUDE.md`).
 
 ## Working agreement for the session
-- **I (Aryan) write the code.** Claude guides step by step: explains what to do next, which APIs/classes to use, and why. Claude reviews my code and debugs with me, but does not write full implementations unless I ask.
-- **This is my first Android project** (iOS + Java background, no Android). When guiding, Claude should:
-  - Give the actual code to type in, plus exactly where it goes (file, method, class).
-  - Explain both what the code does *and* how it fits into the app's architecture — which other class calls it, what reads this state later, why this piece exists.
+- **Claude writes the code directly (as of 2026-11-12, Aryan's explicit request).** This replaced the original "Aryan writes, Claude guides" agreement starting partway through Milestone 4, once the work moved into OpenCV/Mode B territory. Claude implements, compiles (`gradlew compileDebugJavaWithJavac`) to catch errors before handing it over, and Aryan tests on the real device.
+- **This is my first Android project** (iOS + Java background, no Android). Even though Claude writes the code now, keep explaining it the same way as before:
+  - Say what the code does *and* how it fits into the app's architecture — which other class calls it, what reads this state later, why this piece exists.
   - Treat it like a dev tutorial: introduce new Android-specific APIs/concepts as they come up (lifecycle, `SharedPreferences`, `SurfaceView`, Gradle vs. Xcode build settings, etc.), ideally with an iOS/Java analogy.
   - Keep explanations simple and concise — no padding.
 - Be direct and critical. Flag bad decisions early.

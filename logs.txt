@@ -1,0 +1,526 @@
+##TEST 1
+Card white
+2026-11-12 12:39:08.047 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=88868 aspect=1.44 hue=111 sat=47 skin=false
+2026-11-12 12:39:08.094 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=89003 aspect=1.44 hue=110 sat=47 skin=false
+2026-11-12 12:39:08.144 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=89883 aspect=1.44 hue=110 sat=47 skin=false
+2026-11-12 12:39:08.214 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=94438 aspect=1.29 hue=111 sat=43 skin=false
+2026-11-12 12:39:08.263 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=97501 aspect=1.31 hue=113 sat=42 skin=false
+2026-11-12 12:39:17.107 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=95318 aspect=1.63 hue=113 sat=43 skin=false
+2026-11-12 12:39:17.166 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=96254 aspect=1.61 hue=113 sat=41 skin=false
+2026-11-12 12:39:17.217 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=106232 aspect=1.67 hue=112 sat=38 skin=false
+2026-11-12 12:39:17.318 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=82213 aspect=1.95 hue=108 sat=41 skin=false
+2026-11-12 12:39:17.366 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=90889 aspect=1.41 hue=103 sat=41 skin=false
+2026-11-12 12:39:17.414 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=92787 aspect=1.49 hue=104 sat=40 skin=false
+2026-11-12 12:39:17.467 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=92479 aspect=1.57 hue=101 sat=40 skin=false
+2026-11-12 12:39:17.522 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=87218 aspect=1.30 hue=112 sat=40 skin=false
+2026-11-12 12:39:17.573 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=86204 aspect=1.36 hue=113 sat=40 skin=false
+2026-11-12 12:39:17.625 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=89854 aspect=1.33 hue=119 sat=39 skin=false
+2026-11-12 12:39:17.673 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=90287 aspect=1.38 hue=117 sat=41 skin=false
+2026-11-12 12:39:17.727 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=92274 aspect=1.45 hue=116 sat=41 skin=false
+2026-11-12 12:39:17.780 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=95371 aspect=1.41 hue=114 sat=41 skin=false
+2026-11-12 12:39:17.833 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=97002 aspect=1.39 hue=113 sat=41 skin=false
+2026-11-12 12:39:23.914 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=100852 aspect=1.23 hue=97 sat=55 skin=false
+2026-11-12 12:39:23.977 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=90452 aspect=1.21 hue=93 sat=54 skin=false
+2026-11-12 12:39:24.028 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=85461 aspect=1.21 hue=88 sat=51 skin=false
+2026-11-12 12:39:24.078 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=78322 aspect=1.16 hue=89 sat=50 skin=false
+2026-11-12 12:39:24.134 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=70390 aspect=1.15 hue=87 sat=46 skin=false
+2026-11-12 12:39:24.185 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=67338 aspect=1.17 hue=87 sat=42 skin=false
+2026-11-12 12:39:24.232 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=65140 aspect=1.19 hue=86 sat=41 skin=false
+2026-11-12 12:39:24.277 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=64189 aspect=1.18 hue=84 sat=41 skin=false
+2026-11-12 12:39:24.327 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=64159 aspect=1.19 hue=86 sat=40 skin=false
+2026-11-12 12:39:24.362 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=73738 aspect=1.22 hue=88 sat=40 skin=false
+2026-11-12 12:39:24.423 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=74560 aspect=1.06 hue=86 sat=38 skin=false
+2026-11-12 12:39:24.469 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=100618 aspect=1.26 hue=88 sat=39 skin=false
+2026-11-12 12:39:24.527 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=102982 aspect=1.10 hue=88 sat=36 skin=false
+2026-11-12 12:39:24.572 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=100469 aspect=1.26 hue=97 sat=39 skin=false
+2026-11-12 12:39:24.622 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=103899 aspect=1.10 hue=88 sat=36 skin=false
+2026-11-12 12:39:24.675 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=105129 aspect=1.10 hue=90 sat=36 skin=false
+2026-11-12 12:39:24.721 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=107402 aspect=1.11 hue=92 sat=35 skin=false
+2026-11-12 12:39:24.774 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=106187 aspect=1.10 hue=87 sat=35 skin=false
+2026-11-12 12:39:24.819 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=106041 aspect=1.10 hue=91 sat=36 skin=false
+2026-11-12 12:39:24.881 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=106187 aspect=1.24 hue=94 sat=38 skin=false
+2026-11-12 12:39:24.921 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=105319 aspect=1.22 hue=99 sat=38 skin=false
+2026-11-12 12:39:24.975 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=106941 aspect=1.10 hue=116 sat=34 skin=false
+
+Card Pink
+2026-11-12 12:40:34.463 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=78713 aspect=1.63 hue=150 sat=118 skin=false
+2026-11-12 12:40:34.517 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=79359 aspect=1.65 hue=150 sat=118 skin=false
+2026-11-12 12:40:34.566 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=80101 aspect=1.63 hue=150 sat=119 skin=false
+2026-11-12 12:40:34.614 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=80862 aspect=1.65 hue=150 sat=119 skin=false
+2026-11-12 12:40:34.666 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=80952 aspect=1.62 hue=150 sat=120 skin=false
+2026-11-12 12:40:34.717 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=80468 aspect=1.62 hue=150 sat=119 skin=false
+2026-11-12 12:40:34.765 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=80502 aspect=1.64 hue=150 sat=120 skin=false
+2026-11-12 12:40:34.814 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=80784 aspect=1.61 hue=150 sat=120 skin=false
+2026-11-12 12:40:34.865 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=81135 aspect=1.64 hue=150 sat=119 skin=false
+2026-11-12 12:40:34.914 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=81731 aspect=1.63 hue=150 sat=120 skin=false
+2026-11-12 12:40:34.969 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=82589 aspect=1.61 hue=150 sat=120 skin=false
+2026-11-12 12:40:35.018 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=83287 aspect=1.64 hue=150 sat=121 skin=false
+2026-11-12 12:40:35.068 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=83326 aspect=1.65 hue=150 sat=120 skin=false
+2026-11-12 12:40:35.117 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=12296 aspect=2.01 hue=75 sat=10 skin=false
+2026-11-12 12:40:35.372 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=100075 aspect=1.60 hue=150 sat=125 skin=false
+2026-11-12 12:40:35.420 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=100552 aspect=1.61 hue=151 sat=126 skin=false
+2026-11-12 12:40:35.513 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=97868 aspect=1.62 hue=151 sat=124 skin=false
+2026-11-12 12:40:35.569 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=98570 aspect=1.61 hue=151 sat=127 skin=false
+2026-11-12 12:40:35.613 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=101062 aspect=1.61 hue=151 sat=124 skin=false
+2026-11-12 12:40:35.816 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=107063 aspect=1.60 hue=152 sat=126 skin=false
+2026-11-12 12:40:35.859 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=104820 aspect=1.61 hue=152 sat=126 skin=false
+2026-11-12 12:40:35.907 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=102810 aspect=1.62 hue=152 sat=127 skin=false
+2026-11-12 12:40:35.960 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=100945 aspect=1.60 hue=152 sat=127 skin=false
+2026-11-12 12:40:36.008 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=99925 aspect=1.61 hue=153 sat=126 skin=false
+2026-11-12 12:40:36.064 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=99184 aspect=1.62 hue=153 sat=126 skin=false
+2026-11-12 12:40:36.120 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=98980 aspect=1.61 hue=152 sat=127 skin=false
+2026-11-12 12:40:36.170 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=98859 aspect=1.60 hue=152 sat=127 skin=false
+2026-11-12 12:40:36.224 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=99363 aspect=1.62 hue=152 sat=127 skin=false
+2026-11-12 12:40:36.276 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=100192 aspect=1.61 hue=152 sat=127 skin=false
+2026-11-12 12:40:36.329 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=100068 aspect=1.61 hue=152 sat=127 skin=false
+2026-11-12 12:40:36.379 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=99148 aspect=1.61 hue=152 sat=127 skin=false
+2026-11-12 12:40:36.433 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=98442 aspect=1.60 hue=152 sat=127 skin=false
+2026-11-12 12:40:36.485 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=97805 aspect=1.61 hue=152 sat=127 skin=false
+2026-11-12 12:40:36.536 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=97080 aspect=1.63 hue=152 sat=127 skin=false
+2026-11-12 12:40:36.586 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=96235 aspect=1.62 hue=152 sat=125 skin=false
+2026-11-12 12:40:36.639 28213-28486 Mirage                  com.aryan.mirage                     D  edgeQuad: area=95980 aspect=1.61 hue=152 sat=125 skin=false
+2026-11-12 12:40:37.770 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=83275 aspect=1.34 hue=148 sat=23 skin=false
+
+
+Hand
+2026-11-12 12:41:13.171 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=39048 aspect=2.54 hue=120 sat=26 skin=false
+2026-11-12 12:41:13.229 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=60378 aspect=3.64 hue=123 sat=20 skin=false
+2026-11-12 12:41:13.279 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=61452 aspect=3.61 hue=113 sat=12 skin=false
+2026-11-12 12:41:13.332 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=82922 aspect=2.64 hue=110 sat=12 skin=false
+2026-11-12 12:41:13.433 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=93176 aspect=1.60 hue=70 sat=18 skin=false
+2026-11-12 12:41:13.480 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=56249 aspect=2.34 hue=84 sat=20 skin=false
+2026-11-12 12:41:13.534 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=54237 aspect=2.16 hue=84 sat=20 skin=false
+2026-11-12 12:41:13.587 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=52198 aspect=2.06 hue=90 sat=20 skin=false
+2026-11-12 12:41:13.636 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=59553 aspect=1.88 hue=92 sat=21 skin=false
+2026-11-12 12:41:13.682 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=57044 aspect=1.85 hue=92 sat=23 skin=false
+2026-11-12 12:41:13.733 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=57894 aspect=1.86 hue=94 sat=23 skin=false
+2026-11-12 12:41:13.779 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=57310 aspect=1.93 hue=98 sat=22 skin=false
+2026-11-12 12:41:13.837 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=61084 aspect=1.79 hue=97 sat=22 skin=false
+2026-11-12 12:41:13.879 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=54218 aspect=1.94 hue=100 sat=23 skin=false
+2026-11-12 12:41:13.936 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=52201 aspect=2.07 hue=111 sat=22 skin=false
+2026-11-12 12:41:13.975 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=48027 aspect=2.48 hue=110 sat=25 skin=false
+2026-11-12 12:41:14.042 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=76115 aspect=1.81 hue=101 sat=24 skin=false
+2026-11-12 12:41:14.074 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=63995 aspect=2.09 hue=117 sat=22 skin=false
+2026-11-12 12:41:14.137 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=59032 aspect=2.82 hue=135 sat=22 skin=false
+2026-11-12 12:41:14.175 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=37618 aspect=3.40 hue=144 sat=31 skin=false
+2026-11-12 12:41:14.231 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=33760 aspect=4.59 hue=139 sat=28 skin=false
+2026-11-12 12:41:18.243 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=31144 aspect=3.39 hue=38 sat=28 skin=false
+2026-11-12 12:41:18.283 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=32388 aspect=3.15 hue=56 sat=27 skin=false
+2026-11-12 12:41:18.332 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=29835 aspect=4.23 hue=46 sat=27 skin=false
+2026-11-12 12:41:18.392 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=28789 aspect=4.20 hue=35 sat=29 skin=false
+2026-11-12 12:41:18.437 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=27640 aspect=4.15 hue=51 sat=28 skin=false
+2026-11-12 12:41:18.487 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=30073 aspect=3.18 hue=68 sat=28 skin=false
+2026-11-12 12:41:18.540 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=26806 aspect=3.76 hue=74 sat=28 skin=false
+2026-11-12 12:41:18.582 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=23591 aspect=4.22 hue=73 sat=30 skin=false
+2026-11-12 12:41:18.640 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=23580 aspect=4.24 hue=82 sat=35 skin=false
+2026-11-12 12:41:18.688 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=19608 aspect=4.82 hue=89 sat=32 skin=false
+2026-11-12 12:41:18.736 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=13296 aspect=5.84 hue=91 sat=31 skin=false
+
+
+Face
+2026-11-12 12:41:37.538 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=28526 aspect=1.94 hue=37 sat=66 skin=false
+2026-11-12 12:41:37.588 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=29249 aspect=1.94 hue=37 sat=66 skin=false
+2026-11-12 12:41:38.494 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=13847 aspect=2.20 hue=9 sat=110 skin=true
+2026-11-12 12:41:38.536 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=22459 aspect=1.43 hue=31 sat=45 skin=false
+2026-11-12 12:41:38.593 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=21788 aspect=1.49 hue=32 sat=45 skin=false
+2026-11-12 12:41:38.653 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=22096 aspect=1.53 hue=32 sat=44 skin=false
+2026-11-12 12:41:38.720 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=21984 aspect=1.56 hue=33 sat=42 skin=false
+2026-11-12 12:41:38.774 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=22495 aspect=1.59 hue=33 sat=41 skin=false
+2026-11-12 12:41:38.819 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=22528 aspect=1.57 hue=32 sat=41 skin=false
+2026-11-12 12:41:38.875 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=20575 aspect=1.63 hue=33 sat=41 skin=false
+2026-11-12 12:41:38.922 28213-28486 Mirage                  com.aryan.mirage                     D  brightBlob: area=24613 aspect=1.89 hue=27 sat=51 skin=false
+
+## TEST 2
+
+White Card
+2026-11-12 12:47:24.614 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=68237 aspect=1.80 hue=118 sat=40 skin=false
+2026-11-12 12:47:24.663 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=76429 aspect=1.22 hue=118 sat=36 skin=false
+2026-11-12 12:47:24.713 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=74785 aspect=1.38 hue=114 sat=34 skin=false
+2026-11-12 12:47:24.763 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=65936 aspect=1.76 hue=115 sat=39 skin=false
+2026-11-12 12:47:24.813 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=64448 aspect=1.64 hue=116 sat=38 skin=false
+2026-11-12 12:47:24.864 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=63314 aspect=1.67 hue=115 sat=38 skin=false
+2026-11-12 12:47:24.916 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=68592 aspect=1.86 hue=118 sat=43 skin=false
+2026-11-12 12:47:24.961 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=68109 aspect=1.87 hue=118 sat=43 skin=false
+2026-11-12 12:47:25.011 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=67730 aspect=1.87 hue=118 sat=43 skin=false
+2026-11-12 12:47:25.063 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=67260 aspect=1.87 hue=118 sat=42 skin=false
+2026-11-12 12:47:25.110 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=66844 aspect=1.87 hue=117 sat=43 skin=false
+2026-11-12 12:47:25.157 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=58023 aspect=1.81 hue=114 sat=38 skin=false
+2026-11-12 12:47:25.207 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=57035 aspect=1.80 hue=113 sat=38 skin=false
+2026-11-12 12:47:25.260 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=55758 aspect=1.80 hue=112 sat=37 skin=false
+2026-11-12 12:47:25.307 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=55473 aspect=1.59 hue=115 sat=38 skin=false
+2026-11-12 12:47:25.360 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=61915 aspect=1.82 hue=119 sat=42 skin=false
+2026-11-12 12:47:25.412 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=60655 aspect=1.79 hue=118 sat=42 skin=false
+2026-11-12 12:47:25.461 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=63059 aspect=1.68 hue=119 sat=42 skin=false
+2026-11-12 12:47:25.512 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=64658 aspect=1.70 hue=118 sat=42 skin=false
+2026-11-12 12:47:25.563 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=64708 aspect=1.71 hue=116 sat=42 skin=false
+2026-11-12 12:47:25.609 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=64100 aspect=1.69 hue=117 sat=42 skin=false
+2026-11-12 12:47:25.660 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=64895 aspect=1.71 hue=116 sat=42 skin=false
+2026-11-12 12:47:25.710 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=65202 aspect=1.70 hue=117 sat=41 skin=false
+2026-11-12 12:47:25.759 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=66836 aspect=1.24 hue=118 sat=38 skin=false
+2026-11-12 12:47:25.809 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=66277 aspect=1.72 hue=118 sat=41 skin=false
+2026-11-12 12:47:25.861 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=66544 aspect=1.24 hue=118 sat=38 skin=false
+2026-11-12 12:47:25.914 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=66566 aspect=1.26 hue=118 sat=39 skin=false
+2026-11-12 12:47:25.971 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=66632 aspect=1.25 hue=118 sat=38 skin=false
+2026-11-12 12:47:26.020 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=68095 aspect=1.25 hue=119 sat=38 skin=false
+2026-11-12 12:47:26.070 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=68530 aspect=1.67 hue=119 sat=41 skin=false
+2026-11-12 12:47:26.118 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=74187 aspect=1.14 hue=110 sat=32 skin=false
+2026-11-12 12:47:26.167 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=77030 aspect=1.10 hue=113 sat=33 skin=false
+2026-11-12 12:47:26.214 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=79603 aspect=1.10 hue=112 sat=33 skin=false
+2026-11-12 12:47:26.264 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=83325 aspect=1.11 hue=111 sat=31 skin=false
+2026-11-12 12:47:26.313 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=93446 aspect=1.14 hue=110 sat=29 skin=false
+
+
+Pink Card
+2026-11-12 12:47:51.984 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=46686 aspect=1.58 hue=151 sat=137 skin=false
+2026-11-12 12:47:52.037 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=46405 aspect=1.58 hue=151 sat=137 skin=false
+2026-11-12 12:47:52.084 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=46325 aspect=1.55 hue=151 sat=137 skin=false
+2026-11-12 12:47:52.137 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=46116 aspect=1.55 hue=152 sat=130 skin=false
+2026-11-12 12:47:52.186 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=45976 aspect=1.56 hue=152 sat=130 skin=false
+2026-11-12 12:47:52.241 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=45699 aspect=1.54 hue=152 sat=130 skin=false
+2026-11-12 12:47:52.290 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=45416 aspect=1.56 hue=152 sat=130 skin=false
+2026-11-12 12:47:52.331 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=45478 aspect=1.56 hue=152 sat=131 skin=false
+2026-11-12 12:47:52.383 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=45584 aspect=1.56 hue=152 sat=131 skin=false
+2026-11-12 12:47:52.431 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=45674 aspect=1.55 hue=152 sat=131 skin=false
+2026-11-12 12:47:52.483 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=45672 aspect=1.57 hue=152 sat=131 skin=false
+2026-11-12 12:47:52.531 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=45515 aspect=1.56 hue=152 sat=131 skin=false
+2026-11-12 12:47:52.582 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=45456 aspect=1.55 hue=152 sat=131 skin=false
+2026-11-12 12:47:52.643 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=45277 aspect=1.58 hue=152 sat=131 skin=false
+2026-11-12 12:47:52.698 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=45516 aspect=1.58 hue=152 sat=131 skin=false
+2026-11-12 12:47:52.750 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=45603 aspect=1.56 hue=152 sat=130 skin=false
+2026-11-12 12:47:52.804 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=45790 aspect=1.56 hue=152 sat=131 skin=false
+2026-11-12 12:47:52.861 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=45814 aspect=1.57 hue=152 sat=131 skin=false
+2026-11-12 12:47:52.909 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=45839 aspect=1.54 hue=152 sat=131 skin=false
+2026-11-12 12:47:52.964 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=45998 aspect=1.57 hue=152 sat=131 skin=false
+2026-11-12 12:47:53.012 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=46003 aspect=1.57 hue=152 sat=130 skin=false
+2026-11-12 12:47:53.060 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=45676 aspect=1.56 hue=152 sat=130 skin=false
+2026-11-12 12:47:53.111 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=45621 aspect=1.56 hue=152 sat=130 skin=false
+2026-11-12 12:47:53.161 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=45434 aspect=1.54 hue=152 sat=129 skin=false
+2026-11-12 12:47:53.209 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=45167 aspect=1.55 hue=152 sat=130 skin=false
+2026-11-12 12:47:53.264 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44815 aspect=1.55 hue=152 sat=130 skin=false
+2026-11-12 12:47:53.314 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44702 aspect=1.55 hue=152 sat=130 skin=false
+2026-11-12 12:47:53.360 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44568 aspect=1.56 hue=152 sat=130 skin=false
+2026-11-12 12:47:53.413 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44629 aspect=1.56 hue=152 sat=128 skin=false
+2026-11-12 12:47:53.460 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44368 aspect=1.55 hue=152 sat=129 skin=false
+2026-11-12 12:47:53.514 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44467 aspect=1.57 hue=152 sat=130 skin=false
+2026-11-12 12:47:53.566 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44550 aspect=1.55 hue=152 sat=131 skin=false
+2026-11-12 12:47:53.619 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44618 aspect=1.55 hue=152 sat=130 skin=false
+2026-11-12 12:47:53.670 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44500 aspect=1.55 hue=152 sat=130 skin=false
+2026-11-12 12:47:53.715 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44475 aspect=1.56 hue=152 sat=130 skin=false
+2026-11-12 12:47:53.764 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44370 aspect=1.54 hue=152 sat=129 skin=false
+2026-11-12 12:47:53.819 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44349 aspect=1.54 hue=152 sat=130 skin=false
+2026-11-12 12:47:53.869 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44375 aspect=1.55 hue=152 sat=131 skin=false
+2026-11-12 12:47:53.918 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44165 aspect=1.57 hue=152 sat=130 skin=false
+2026-11-12 12:47:53.969 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44189 aspect=1.56 hue=152 sat=130 skin=false
+2026-11-12 12:47:54.019 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44307 aspect=1.56 hue=152 sat=129 skin=false
+2026-11-12 12:47:54.072 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44569 aspect=1.57 hue=152 sat=131 skin=false
+2026-11-12 12:47:54.120 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44462 aspect=1.55 hue=152 sat=131 skin=false
+2026-11-12 12:47:54.170 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44533 aspect=1.54 hue=152 sat=132 skin=false
+2026-11-12 12:47:54.220 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44187 aspect=1.57 hue=152 sat=132 skin=false
+2026-11-12 12:47:54.269 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=43712 aspect=1.58 hue=152 sat=132 skin=false
+2026-11-12 12:47:54.317 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=43352 aspect=1.56 hue=151 sat=131 skin=false
+2026-11-12 12:47:54.369 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=43192 aspect=1.56 hue=151 sat=132 skin=false
+2026-11-12 12:47:54.420 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=42842 aspect=1.57 hue=151 sat=131 skin=false
+2026-11-12 12:47:54.468 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=42938 aspect=1.55 hue=151 sat=131 skin=false
+2026-11-12 12:47:54.517 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=43190 aspect=1.57 hue=151 sat=131 skin=false
+2026-11-12 12:47:54.564 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=43522 aspect=1.56 hue=151 sat=131 skin=false
+2026-11-12 12:47:54.612 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=43719 aspect=1.55 hue=151 sat=130 skin=false
+
+Hand
+2026-11-12 12:47:54.170 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44533 aspect=1.54 hue=152 sat=132 skin=false
+2026-11-12 12:47:54.220 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=44187 aspect=1.57 hue=152 sat=132 skin=false
+2026-11-12 12:47:54.269 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=43712 aspect=1.58 hue=152 sat=132 skin=false
+2026-11-12 12:47:54.317 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=43352 aspect=1.56 hue=151 sat=131 skin=false
+2026-11-12 12:47:54.369 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=43192 aspect=1.56 hue=151 sat=132 skin=false
+2026-11-12 12:47:54.420 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=42842 aspect=1.57 hue=151 sat=131 skin=false
+2026-11-12 12:47:54.468 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=42938 aspect=1.55 hue=151 sat=131 skin=false
+2026-11-12 12:47:54.517 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=43190 aspect=1.57 hue=151 sat=131 skin=false
+2026-11-12 12:47:54.564 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=43522 aspect=1.56 hue=151 sat=131 skin=false
+2026-11-12 12:47:54.612 30800-31027 Mirage                  com.aryan.mirage                     D  edgeQuad: area=43719 aspect=1.55 hue=151 sat=130 skin=false
+2026-11-12 12:48:22.341 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=35602 aspect=2.52 hue=48 sat=23 skin=false
+2026-11-12 12:48:22.391 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=33498 aspect=2.72 hue=48 sat=25 skin=false
+2026-11-12 12:48:22.442 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=34038 aspect=2.66 hue=51 sat=26 skin=false
+2026-11-12 12:48:22.484 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=34634 aspect=2.62 hue=55 sat=28 skin=false
+2026-11-12 12:48:22.539 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=33459 aspect=2.63 hue=55 sat=29 skin=false
+2026-11-12 12:48:22.587 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=32935 aspect=2.64 hue=56 sat=30 skin=false
+2026-11-12 12:48:22.639 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=34127 aspect=2.79 hue=61 sat=27 skin=false
+2026-11-12 12:48:22.685 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=34438 aspect=2.93 hue=66 sat=29 skin=false
+2026-11-12 12:48:22.746 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=36625 aspect=2.68 hue=75 sat=30 skin=false
+2026-11-12 12:48:22.787 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=35294 aspect=2.91 hue=82 sat=29 skin=false
+2026-11-12 12:48:22.841 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=38020 aspect=3.17 hue=102 sat=23 skin=false
+2026-11-12 12:48:22.890 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=26248 aspect=4.55 hue=126 sat=18 skin=false
+2026-11-12 12:48:22.938 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=19595 aspect=4.45 hue=135 sat=20 skin=false
+2026-11-12 12:48:27.192 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=49309 aspect=2.31 hue=123 sat=19 skin=false
+
+Head
+2026-11-12 12:48:49.628 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=16777 aspect=1.13 hue=10 sat=90 skin=true
+2026-11-12 12:48:49.667 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=14913 aspect=1.01 hue=12 sat=94 skin=true
+2026-11-12 12:48:59.310 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=20581 aspect=1.17 hue=16 sat=84 skin=true
+2026-11-12 12:48:59.370 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=17778 aspect=1.21 hue=16 sat=85 skin=true
+2026-11-12 12:48:59.410 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=14894 aspect=1.22 hue=15 sat=85 skin=true
+2026-11-12 12:48:59.467 30800-31027 Mirage                  com.aryan.mirage                     D  brightBlob: area=12322 aspect=1.28 hue=14 sat=86 skin=true
+
+## TEST 3 (to know whether 0.85 is the culprit)
+
+White Card
+
+2026-11-12 13:06:44.706  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=58357 aspect=1.08 hue=89 sat=58 skin=false extent=0.72
+2026-11-12 13:06:44.743  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=58364 aspect=1.08 hue=89 sat=58 skin=false extent=0.72
+2026-11-12 13:06:44.783  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=58351 aspect=1.08 hue=88 sat=58 skin=false extent=0.71
+2026-11-12 13:06:44.823  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=58252 aspect=1.08 hue=88 sat=57 skin=false extent=0.71
+2026-11-12 13:06:44.867  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=57827 aspect=1.08 hue=88 sat=57 skin=false extent=0.71
+2026-11-12 13:06:44.904  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=57542 aspect=1.08 hue=88 sat=57 skin=false extent=0.72
+2026-11-12 13:06:44.945  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=56837 aspect=1.08 hue=89 sat=57 skin=false extent=0.71
+2026-11-12 13:06:44.984  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=57364 aspect=1.08 hue=88 sat=57 skin=false extent=0.72
+2026-11-12 13:06:45.026  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=57876 aspect=1.07 hue=87 sat=57 skin=false extent=0.72
+2026-11-12 13:06:45.067  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=58432 aspect=1.07 hue=87 sat=57 skin=false extent=0.72
+2026-11-12 13:06:45.108  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=58763 aspect=1.08 hue=87 sat=57 skin=false extent=0.72
+2026-11-12 13:06:45.150  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=58912 aspect=1.08 hue=87 sat=57 skin=false extent=0.71
+2026-11-12 13:06:45.190  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=59216 aspect=1.08 hue=88 sat=57 skin=false extent=0.71
+2026-11-12 13:06:45.232  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=59325 aspect=1.08 hue=89 sat=57 skin=false extent=0.72
+2026-11-12 13:06:45.270  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=83490 aspect=1.75 hue=83 sat=60 skin=false extent=0.56
+2026-11-12 13:06:45.310  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=59504 aspect=1.09 hue=89 sat=57 skin=false extent=0.72
+2026-11-12 13:06:45.348  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=59365 aspect=1.09 hue=89 sat=57 skin=false extent=0.71
+2026-11-12 13:06:45.389  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=59463 aspect=1.08 hue=89 sat=57 skin=false extent=0.72
+2026-11-12 13:06:45.431  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=83982 aspect=1.75 hue=83 sat=60 skin=false extent=0.56
+2026-11-12 13:06:45.474  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=59812 aspect=1.09 hue=89 sat=57 skin=false extent=0.72
+2026-11-12 13:06:45.507  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=59953 aspect=1.09 hue=89 sat=57 skin=false extent=0.72
+2026-11-12 13:06:45.553  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=59671 aspect=1.08 hue=89 sat=57 skin=false extent=0.72
+2026-11-12 13:06:45.590  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=59364 aspect=1.08 hue=89 sat=57 skin=false extent=0.72
+2026-11-12 13:06:45.632  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=59380 aspect=1.08 hue=89 sat=57 skin=false extent=0.72
+2026-11-12 13:06:45.673  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=59274 aspect=1.08 hue=89 sat=57 skin=false extent=0.72
+2026-11-12 13:06:45.710  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=59281 aspect=1.08 hue=89 sat=57 skin=false extent=0.72
+2026-11-12 13:06:45.753  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=59313 aspect=1.09 hue=89 sat=57 skin=false extent=0.72
+2026-11-12 13:06:45.790  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=59041 aspect=1.08 hue=90 sat=57 skin=false extent=0.72
+2026-11-12 13:06:45.833  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=58787 aspect=1.08 hue=89 sat=57 skin=false extent=0.72
+2026-11-12 13:06:45.866  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=59224 aspect=1.08 hue=89 sat=56 skin=false extent=0.72
+2026-11-12 13:06:45.915  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=59823 aspect=1.07 hue=89 sat=55 skin=false extent=0.72
+2026-11-12 13:06:45.949  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=85022 aspect=1.71 hue=83 sat=57 skin=false extent=0.56
+2026-11-12 13:06:45.992  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=60660 aspect=1.07 hue=88 sat=55 skin=false extent=0.72
+2026-11-12 13:06:46.029  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=60986 aspect=1.06 hue=88 sat=55 skin=false extent=0.72
+2026-11-12 13:06:46.072  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=60928 aspect=1.07 hue=88 sat=55 skin=false extent=0.72
+2026-11-12 13:06:46.113  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=85520 aspect=1.70 hue=82 sat=57 skin=false extent=0.56
+2026-11-12 13:06:46.148  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=60809 aspect=1.07 hue=90 sat=56 skin=false extent=0.72
+2026-11-12 13:06:46.188  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=85698 aspect=1.72 hue=86 sat=57 skin=false extent=0.56
+2026-11-12 13:06:46.236  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=85715 aspect=1.71 hue=87 sat=57 skin=false extent=0.56
+2026-11-12 13:06:46.269  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=61207 aspect=1.08 hue=90 sat=56 skin=false extent=0.72
+2026-11-12 13:06:46.316  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=61305 aspect=1.07 hue=90 sat=55 skin=false extent=0.72
+2026-11-12 13:06:46.350  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=85607 aspect=1.70 hue=87 sat=57 skin=false extent=0.56
+2026-11-12 13:06:46.398  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=61148 aspect=1.07 hue=90 sat=56 skin=false extent=0.72
+2026-11-12 13:06:46.441  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=85883 aspect=1.70 hue=87 sat=57 skin=false extent=0.56
+2026-11-12 13:06:46.480  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=60890 aspect=1.07 hue=90 sat=55 skin=false extent=0.72
+2026-11-12 13:06:46.514  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=86147 aspect=1.71 hue=87 sat=57 skin=false extent=0.56
+2026-11-12 13:06:46.546  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=61580 aspect=1.07 hue=90 sat=56 skin=false extent=0.72
+2026-11-12 13:06:46.591  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=86847 aspect=1.71 hue=90 sat=57 skin=false extent=0.56
+2026-11-12 13:06:46.634  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=87302 aspect=1.71 hue=88 sat=57 skin=false extent=0.56
+2026-11-12 13:06:46.671  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=87501 aspect=1.71 hue=89 sat=57 skin=false extent=0.56
+2026-11-12 13:06:46.714  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=87560 aspect=1.71 hue=89 sat=57 skin=false extent=0.57
+2026-11-12 13:06:46.754  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=87971 aspect=1.70 hue=89 sat=57 skin=false extent=0.56
+2026-11-12 13:06:46.790  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=88646 aspect=1.68 hue=89 sat=56 skin=false extent=0.56
+2026-11-12 13:06:46.831  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=89247 aspect=1.66 hue=88 sat=56 skin=false extent=0.56
+2026-11-12 13:06:46.874  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=89199 aspect=1.64 hue=90 sat=56 skin=false extent=0.56
+2026-11-12 13:06:46.909  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=89479 aspect=1.63 hue=90 sat=55 skin=false extent=0.56
+2026-11-12 13:06:46.956  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=87852 aspect=1.63 hue=87 sat=56 skin=false extent=0.55
+2026-11-12 13:06:46.990  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=88744 aspect=1.63 hue=85 sat=56 skin=false extent=0.55
+2026-11-12 13:06:47.029  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=88710 aspect=1.62 hue=85 sat=56 skin=false extent=0.55
+2026-11-12 13:06:47.071  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=88503 aspect=1.62 hue=86 sat=56 skin=false extent=0.55
+2026-11-12 13:06:47.113  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=88182 aspect=1.62 hue=86 sat=56 skin=false extent=0.55
+2026-11-12 13:06:47.152  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=88083 aspect=1.62 hue=87 sat=56 skin=false extent=0.55
+2026-11-12 13:06:47.192  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=87393 aspect=1.63 hue=89 sat=55 skin=false extent=0.55
+2026-11-12 13:06:47.235  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=87233 aspect=1.63 hue=89 sat=53 skin=false extent=0.57
+2026-11-12 13:06:47.272  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=92010 aspect=1.57 hue=91 sat=53 skin=false extent=0.59
+2026-11-12 13:06:47.313  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=91169 aspect=1.45 hue=89 sat=49 skin=false extent=0.63
+2026-11-12 13:06:47.355  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=80696 aspect=1.15 hue=81 sat=44 skin=false extent=0.62
+2026-11-12 13:06:47.394  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=75747 aspect=1.13 hue=80 sat=43 skin=false extent=0.67
+2026-11-12 13:06:47.433  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=62572 aspect=1.72 hue=71 sat=39 skin=false extent=0.74
+
+Card Pink
+2026-11-12 13:07:27.706  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=90561 aspect=1.35 hue=133 sat=100 skin=false extent=0.84
+2026-11-12 13:07:27.745  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=91825 aspect=1.34 hue=132 sat=98 skin=false extent=0.84
+2026-11-12 13:07:27.782  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=93091 aspect=1.34 hue=132 sat=96 skin=false extent=0.84
+2026-11-12 13:07:27.829  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=94562 aspect=1.34 hue=132 sat=94 skin=false extent=0.84
+2026-11-12 13:07:27.871  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=96175 aspect=1.35 hue=132 sat=95 skin=false extent=0.84
+2026-11-12 13:07:27.906  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=98180 aspect=1.36 hue=130 sat=94 skin=false extent=0.84
+2026-11-12 13:07:28.390  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=88577 aspect=1.83 hue=100 sat=92 skin=false extent=0.72
+2026-11-12 13:07:28.424  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=53683 aspect=1.68 hue=154 sat=121 skin=false
+2026-11-12 13:07:28.464  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=50461 aspect=1.70 hue=154 sat=117 skin=false
+2026-11-12 13:07:28.512  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=75864 aspect=2.00 hue=89 sat=92 skin=false extent=0.66
+2026-11-12 13:07:28.562  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=60073 aspect=1.40 hue=131 sat=89 skin=false extent=0.82
+2026-11-12 13:07:28.614  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=60828 aspect=1.44 hue=129 sat=89 skin=false extent=0.82
+2026-11-12 13:07:28.663  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=61715 aspect=1.45 hue=127 sat=87 skin=false extent=0.80
+2026-11-12 13:07:28.710  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=82038 aspect=2.15 hue=84 sat=89 skin=false extent=0.65
+2026-11-12 13:07:28.756  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=86260 aspect=2.27 hue=80 sat=86 skin=false extent=0.65
+2026-11-12 13:07:28.786  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=83730 aspect=2.32 hue=77 sat=86 skin=false extent=0.63
+2026-11-12 13:07:28.838  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=81351 aspect=2.35 hue=76 sat=86 skin=false extent=0.61
+2026-11-12 13:07:28.869  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=79891 aspect=2.36 hue=77 sat=85 skin=false extent=0.61
+2026-11-12 13:07:28.915  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=79780 aspect=2.35 hue=76 sat=83 skin=false extent=0.61
+2026-11-12 13:07:28.950  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=79588 aspect=2.33 hue=80 sat=83 skin=false extent=0.62
+2026-11-12 13:07:28.991  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=80618 aspect=2.29 hue=83 sat=82 skin=false extent=0.62
+2026-11-12 13:07:29.041  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=81175 aspect=2.28 hue=82 sat=84 skin=false extent=0.63
+2026-11-12 13:07:29.075  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=59770 aspect=1.51 hue=126 sat=94 skin=false extent=0.76
+2026-11-12 13:07:29.112  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=60177 aspect=1.47 hue=127 sat=93 skin=false extent=0.77
+2026-11-12 13:07:29.153  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=82260 aspect=2.26 hue=80 sat=85 skin=false extent=0.63
+2026-11-12 13:07:29.195  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=60098 aspect=1.47 hue=124 sat=91 skin=false extent=0.77
+2026-11-12 13:07:29.232  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=81486 aspect=2.23 hue=81 sat=85 skin=false extent=0.63
+2026-11-12 13:07:29.278  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=81478 aspect=2.23 hue=81 sat=84 skin=false extent=0.64
+2026-11-12 13:07:29.315  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=46290 aspect=1.71 hue=152 sat=113 skin=false
+2026-11-12 13:07:29.355  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=82216 aspect=2.16 hue=85 sat=84 skin=false extent=0.65
+2026-11-12 13:07:29.393  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=82903 aspect=2.13 hue=88 sat=85 skin=false extent=0.66
+2026-11-12 13:07:29.432  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=50124 aspect=1.65 hue=152 sat=116 skin=false
+2026-11-12 13:07:29.473  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=82529 aspect=2.08 hue=90 sat=92 skin=false extent=0.67
+2026-11-12 13:07:29.516  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=67518 aspect=1.34 hue=133 sat=96 skin=false extent=0.85
+2026-11-12 13:07:29.553  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=68043 aspect=1.34 hue=133 sat=96 skin=false extent=0.84
+2026-11-12 13:07:29.592  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=68771 aspect=1.34 hue=132 sat=96 skin=false extent=0.84
+2026-11-12 13:07:29.635  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=84229 aspect=2.05 hue=91 sat=93 skin=false extent=0.67
+2026-11-12 13:07:29.673  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=83949 aspect=2.04 hue=91 sat=94 skin=false extent=0.67
+2026-11-12 13:07:29.714  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=84643 aspect=2.03 hue=92 sat=93 skin=false extent=0.68
+2026-11-12 13:07:29.754  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=85734 aspect=2.01 hue=93 sat=94 skin=false extent=0.68
+2026-11-12 13:07:29.797  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=87677 aspect=1.98 hue=93 sat=95 skin=false extent=0.68
+2026-11-12 13:07:29.838  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=89516 aspect=1.96 hue=94 sat=96 skin=false extent=0.68
+2026-11-12 13:07:29.874  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=92072 aspect=1.95 hue=93 sat=95 skin=false extent=0.69
+2026-11-12 13:07:29.914  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=94385 aspect=1.96 hue=93 sat=94 skin=false extent=0.69
+2026-11-12 13:07:29.961  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=95705 aspect=1.95 hue=94 sat=94 skin=false extent=0.67
+2026-11-12 13:07:29.993  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=97457 aspect=1.96 hue=95 sat=94 skin=false extent=0.68
+2026-11-12 13:07:30.030  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=98337 aspect=1.96 hue=96 sat=96 skin=false extent=0.67
+2026-11-12 13:07:30.074  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=64789 aspect=1.56 hue=154 sat=141 skin=false
+2026-11-12 13:07:30.114  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=99246 aspect=1.94 hue=96 sat=97 skin=false extent=0.66
+2026-11-12 13:07:30.251  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=65301 aspect=1.53 hue=155 sat=144 skin=false
+2026-11-12 13:07:30.291  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=100082 aspect=2.02 hue=95 sat=96 skin=false extent=0.65
+2026-11-12 13:07:30.327  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=102018 aspect=2.01 hue=98 sat=95 skin=false extent=0.66
+2026-11-12 13:07:30.363  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=102103 aspect=2.01 hue=97 sat=96 skin=false extent=0.66
+2026-11-12 13:07:30.395  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=67966 aspect=1.53 hue=155 sat=145 skin=false
+2026-11-12 13:07:30.441  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=67585 aspect=1.52 hue=155 sat=146 skin=false
+2026-11-12 13:07:30.494  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=103213 aspect=2.03 hue=100 sat=94 skin=false extent=0.66
+2026-11-12 13:07:30.542  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=103317 aspect=2.04 hue=103 sat=94 skin=false extent=0.66
+2026-11-12 13:07:30.586  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=104058 aspect=2.08 hue=98 sat=93 skin=false extent=0.66
+2026-11-12 13:07:30.632  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=104515 aspect=2.10 hue=98 sat=91 skin=false extent=0.66
+2026-11-12 13:07:30.677  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=65163 aspect=1.52 hue=155 sat=141 skin=false
+2026-11-12 13:07:30.731  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=102231 aspect=2.15 hue=96 sat=91 skin=false extent=0.65
+2026-11-12 13:07:30.776  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=64215 aspect=1.53 hue=154 sat=143 skin=false
+2026-11-12 13:07:30.819  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=64416 aspect=1.54 hue=154 sat=143 skin=false
+2026-11-12 13:07:30.863  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=64811 aspect=1.57 hue=154 sat=143 skin=false
+2026-11-12 13:07:30.912  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=65209 aspect=1.53 hue=154 sat=142 skin=false
+2026-11-12 13:07:30.965  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=102660 aspect=2.11 hue=100 sat=92 skin=false extent=0.66
+2026-11-12 13:07:31.018  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=65833 aspect=1.53 hue=154 sat=144 skin=false
+2026-11-12 13:07:31.065  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=102491 aspect=2.09 hue=99 sat=94 skin=false extent=0.66
+2026-11-12 13:07:31.110  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=102535 aspect=2.09 hue=99 sat=94 skin=false extent=0.66
+2026-11-12 13:07:31.154  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=65850 aspect=1.55 hue=154 sat=144 skin=false
+2026-11-12 13:07:31.203  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=65824 aspect=1.53 hue=154 sat=144 skin=false
+2026-11-12 13:07:31.258  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=65524 aspect=1.56 hue=154 sat=143 skin=false
+2026-11-12 13:07:31.303  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=102211 aspect=2.08 hue=100 sat=93 skin=false extent=0.66
+2026-11-12 13:07:31.346  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=65341 aspect=1.56 hue=154 sat=143 skin=false
+2026-11-12 13:07:31.393  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=100974 aspect=2.05 hue=101 sat=94 skin=false extent=0.66
+2026-11-12 13:07:31.438  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=65348 aspect=1.53 hue=154 sat=144 skin=false
+2026-11-12 13:07:31.493  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=65923 aspect=1.52 hue=154 sat=144 skin=false
+2026-11-12 13:07:31.542  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=66220 aspect=1.53 hue=154 sat=145 skin=false
+2026-11-12 13:07:31.588  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=66406 aspect=1.53 hue=154 sat=144 skin=false
+2026-11-12 13:07:31.630  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=66731 aspect=1.51 hue=154 sat=144 skin=false
+2026-11-12 13:07:31.677  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=103482 aspect=2.02 hue=102 sat=95 skin=false extent=0.67
+2026-11-12 13:07:31.724  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=67326 aspect=1.52 hue=154 sat=145 skin=false
+2026-11-12 13:07:31.775  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=67509 aspect=1.54 hue=154 sat=145 skin=false
+2026-11-12 13:07:31.820  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=67830 aspect=1.53 hue=154 sat=145 skin=false
+2026-11-12 13:07:31.863  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=68199 aspect=1.54 hue=154 sat=145 skin=false
+2026-11-12 13:07:31.903  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=68014 aspect=1.52 hue=154 sat=145 skin=false
+2026-11-12 13:07:31.950  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=104097 aspect=2.01 hue=101 sat=95 skin=false extent=0.67
+2026-11-12 13:07:31.999  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=67180 aspect=1.53 hue=154 sat=145 skin=false
+2026-11-12 13:07:32.047  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=67424 aspect=1.55 hue=154 sat=145 skin=false
+2026-11-12 13:07:32.097  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=68009 aspect=1.53 hue=154 sat=144 skin=false
+2026-11-12 13:07:32.141  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=68315 aspect=1.54 hue=154 sat=144 skin=false
+2026-11-12 13:07:32.186  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=68790 aspect=1.52 hue=154 sat=144 skin=false
+2026-11-12 13:07:32.231  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=106739 aspect=2.02 hue=99 sat=94 skin=false extent=0.67
+2026-11-12 13:07:32.277  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=106411 aspect=2.01 hue=98 sat=94 skin=false extent=0.67
+2026-11-12 13:07:32.323  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=106401 aspect=2.01 hue=98 sat=94 skin=false extent=0.67
+2026-11-12 13:07:32.377  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=68581 aspect=1.53 hue=154 sat=142 skin=false
+2026-11-12 13:07:32.425  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=105677 aspect=2.02 hue=97 sat=95 skin=false extent=0.67
+2026-11-12 13:07:32.468  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=68668 aspect=1.52 hue=154 sat=141 skin=false
+2026-11-12 13:07:32.515  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=68314 aspect=1.54 hue=154 sat=141 skin=false
+2026-11-12 13:07:32.558  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=68302 aspect=1.52 hue=154 sat=142 skin=false
+2026-11-12 13:07:32.609  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=68421 aspect=1.53 hue=154 sat=141 skin=false
+2026-11-12 13:07:32.657  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=68468 aspect=1.54 hue=154 sat=142 skin=false
+2026-11-12 13:07:32.705  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=68380 aspect=1.54 hue=154 sat=142 skin=false
+2026-11-12 13:07:32.751  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=68487 aspect=1.54 hue=154 sat=142 skin=false
+2026-11-12 13:07:32.798  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=68669 aspect=1.53 hue=154 sat=141 skin=false
+2026-11-12 13:07:32.842  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=68757 aspect=1.53 hue=154 sat=142 skin=false
+2026-11-12 13:07:32.897  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=68747 aspect=1.54 hue=154 sat=142 skin=false
+2026-11-12 13:07:32.949  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=68619 aspect=1.54 hue=154 sat=142 skin=false
+2026-11-12 13:07:32.988  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=68619 aspect=1.52 hue=154 sat=141 skin=false
+2026-11-12 13:07:33.034  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=68673 aspect=1.56 hue=154 sat=142 skin=false
+2026-11-12 13:07:33.077  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=68991 aspect=1.55 hue=154 sat=141 skin=false
+2026-11-12 13:07:33.136  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=68927 aspect=1.54 hue=154 sat=141 skin=false
+2026-11-12 13:07:33.182  5381-5598  Mirage                  com.aryan.mirage                     D  edgeQuad: area=69145 aspect=1.51 hue=154 sat=141 skin=false
+
+Hand
+2026-11-12 13:08:08.826  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=88737 aspect=2.20 hue=96 sat=37 skin=false extent=0.61
+2026-11-12 13:08:08.879  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=89804 aspect=2.21 hue=117 sat=37 skin=false extent=0.61
+2026-11-12 13:08:08.924  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=91711 aspect=2.22 hue=116 sat=37 skin=false extent=0.61
+2026-11-12 13:08:08.967  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=91717 aspect=2.24 hue=100 sat=37 skin=false extent=0.61
+2026-11-12 13:08:09.035  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=91164 aspect=2.26 hue=101 sat=37 skin=false extent=0.62
+2026-11-12 13:08:09.075  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=91117 aspect=2.26 hue=115 sat=37 skin=false extent=0.62
+2026-11-12 13:08:09.130  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=91833 aspect=2.26 hue=115 sat=37 skin=false extent=0.62
+2026-11-12 13:08:09.177  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=92467 aspect=2.26 hue=115 sat=37 skin=false extent=0.62
+2026-11-12 13:08:09.229  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=92454 aspect=2.26 hue=116 sat=37 skin=false extent=0.62
+2026-11-12 13:08:09.281  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=92619 aspect=2.26 hue=117 sat=37 skin=false extent=0.62
+2026-11-12 13:08:09.331  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=93081 aspect=2.26 hue=117 sat=37 skin=false extent=0.62
+2026-11-12 13:08:09.380  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=92693 aspect=2.26 hue=108 sat=36 skin=false extent=0.62
+2026-11-12 13:08:09.426  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=92424 aspect=2.25 hue=107 sat=37 skin=false extent=0.62
+2026-11-12 13:08:09.484  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=92083 aspect=2.25 hue=107 sat=36 skin=false extent=0.62
+2026-11-12 13:08:09.529  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=92132 aspect=2.26 hue=107 sat=36 skin=false extent=0.62
+2026-11-12 13:08:09.583  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=91582 aspect=2.26 hue=109 sat=37 skin=false extent=0.61
+2026-11-12 13:08:09.635  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=91204 aspect=2.25 hue=109 sat=37 skin=false extent=0.61
+2026-11-12 13:08:09.678  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=92004 aspect=2.19 hue=119 sat=36 skin=false extent=0.62
+2026-11-12 13:08:09.728  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=88960 aspect=2.13 hue=118 sat=38 skin=false extent=0.60
+2026-11-12 13:08:09.780  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=87926 aspect=1.99 hue=118 sat=37 skin=false extent=0.60
+2026-11-12 13:08:09.831  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=85348 aspect=1.64 hue=110 sat=37 skin=false extent=0.59
+2026-11-12 13:08:09.872  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=81688 aspect=1.17 hue=86 sat=34 skin=false extent=0.59
+2026-11-12 13:08:09.934  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=47795 aspect=1.53 hue=49 sat=32 skin=false extent=0.63
+2026-11-12 13:08:09.981  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=95499 aspect=1.05 hue=77 sat=29 skin=false extent=0.46
+2026-11-12 13:08:10.836  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18380 aspect=2.93 hue=73 sat=5 skin=false extent=0.49
+2026-11-12 13:08:10.879  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18057 aspect=2.89 hue=104 sat=5 skin=false extent=0.50
+2026-11-12 13:08:10.979  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=17996 aspect=2.93 hue=99 sat=5 skin=false extent=0.49
+2026-11-12 13:08:11.032  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18037 aspect=2.94 hue=103 sat=5 skin=false extent=0.49
+2026-11-12 13:08:11.080  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18074 aspect=2.93 hue=109 sat=5 skin=false extent=0.49
+2026-11-12 13:08:11.133  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18094 aspect=2.93 hue=110 sat=5 skin=false extent=0.49
+2026-11-12 13:08:11.181  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18100 aspect=2.94 hue=105 sat=6 skin=false extent=0.49
+2026-11-12 13:08:11.229  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18090 aspect=2.93 hue=110 sat=5 skin=false extent=0.49
+2026-11-12 13:08:11.280  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18094 aspect=2.93 hue=110 sat=6 skin=false extent=0.49
+2026-11-12 13:08:11.336  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18095 aspect=2.94 hue=111 sat=6 skin=false extent=0.49
+2026-11-12 13:08:11.384  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18117 aspect=2.92 hue=108 sat=6 skin=false extent=0.49
+2026-11-12 13:08:11.734  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18151 aspect=2.92 hue=116 sat=7 skin=false extent=0.49
+
+Head
+2026-11-12 13:08:08.826  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=88737 aspect=2.20 hue=96 sat=37 skin=false extent=0.61
+2026-11-12 13:08:08.879  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=89804 aspect=2.21 hue=117 sat=37 skin=false extent=0.61
+2026-11-12 13:08:08.924  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=91711 aspect=2.22 hue=116 sat=37 skin=false extent=0.61
+2026-11-12 13:08:08.967  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=91717 aspect=2.24 hue=100 sat=37 skin=false extent=0.61
+2026-11-12 13:08:09.035  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=91164 aspect=2.26 hue=101 sat=37 skin=false extent=0.62
+2026-11-12 13:08:09.075  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=91117 aspect=2.26 hue=115 sat=37 skin=false extent=0.62
+2026-11-12 13:08:09.130  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=91833 aspect=2.26 hue=115 sat=37 skin=false extent=0.62
+2026-11-12 13:08:09.177  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=92467 aspect=2.26 hue=115 sat=37 skin=false extent=0.62
+2026-11-12 13:08:09.229  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=92454 aspect=2.26 hue=116 sat=37 skin=false extent=0.62
+2026-11-12 13:08:09.281  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=92619 aspect=2.26 hue=117 sat=37 skin=false extent=0.62
+2026-11-12 13:08:09.331  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=93081 aspect=2.26 hue=117 sat=37 skin=false extent=0.62
+2026-11-12 13:08:09.380  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=92693 aspect=2.26 hue=108 sat=36 skin=false extent=0.62
+2026-11-12 13:08:09.426  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=92424 aspect=2.25 hue=107 sat=37 skin=false extent=0.62
+2026-11-12 13:08:09.484  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=92083 aspect=2.25 hue=107 sat=36 skin=false extent=0.62
+2026-11-12 13:08:09.529  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=92132 aspect=2.26 hue=107 sat=36 skin=false extent=0.62
+2026-11-12 13:08:09.583  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=91582 aspect=2.26 hue=109 sat=37 skin=false extent=0.61
+2026-11-12 13:08:09.635  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=91204 aspect=2.25 hue=109 sat=37 skin=false extent=0.61
+2026-11-12 13:08:09.678  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=92004 aspect=2.19 hue=119 sat=36 skin=false extent=0.62
+2026-11-12 13:08:09.728  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=88960 aspect=2.13 hue=118 sat=38 skin=false extent=0.60
+2026-11-12 13:08:09.780  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=87926 aspect=1.99 hue=118 sat=37 skin=false extent=0.60
+2026-11-12 13:08:09.831  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=85348 aspect=1.64 hue=110 sat=37 skin=false extent=0.59
+2026-11-12 13:08:09.872  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=81688 aspect=1.17 hue=86 sat=34 skin=false extent=0.59
+2026-11-12 13:08:09.934  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=47795 aspect=1.53 hue=49 sat=32 skin=false extent=0.63
+2026-11-12 13:08:09.981  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=95499 aspect=1.05 hue=77 sat=29 skin=false extent=0.46
+2026-11-12 13:08:10.836  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18380 aspect=2.93 hue=73 sat=5 skin=false extent=0.49
+2026-11-12 13:08:10.879  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18057 aspect=2.89 hue=104 sat=5 skin=false extent=0.50
+2026-11-12 13:08:10.979  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=17996 aspect=2.93 hue=99 sat=5 skin=false extent=0.49
+2026-11-12 13:08:11.032  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18037 aspect=2.94 hue=103 sat=5 skin=false extent=0.49
+2026-11-12 13:08:11.080  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18074 aspect=2.93 hue=109 sat=5 skin=false extent=0.49
+2026-11-12 13:08:11.133  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18094 aspect=2.93 hue=110 sat=5 skin=false extent=0.49
+2026-11-12 13:08:11.181  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18100 aspect=2.94 hue=105 sat=6 skin=false extent=0.49
+2026-11-12 13:08:11.229  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18090 aspect=2.93 hue=110 sat=5 skin=false extent=0.49
+2026-11-12 13:08:11.280  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18094 aspect=2.93 hue=110 sat=6 skin=false extent=0.49
+2026-11-12 13:08:11.336  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18095 aspect=2.94 hue=111 sat=6 skin=false extent=0.49
+2026-11-12 13:08:11.384  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18117 aspect=2.92 hue=108 sat=6 skin=false extent=0.49
+2026-11-12 13:08:11.734  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18151 aspect=2.92 hue=116 sat=7 skin=false extent=0.49
+

@@ -22,6 +22,9 @@ import com.aryan.mirage.composite.CardCompositor;
 import com.aryan.mirage.controls.HiddenControls;
 import com.aryan.mirage.data.CardRepository;
 import com.aryan.mirage.data.ForceState;
+import com.aryan.mirage.detect.CardDetector;
+
+import org.opencv.android.OpenCVLoader;
 
 /**
  * Launcher activity. See SPEC.md "1. FakeCameraActivity" and the architecture diagram.
@@ -42,11 +45,13 @@ public class FakeCameraActivity extends AppCompatActivity implements HiddenContr
     private ForceState forceState;
     private CardRepository cardRepository;
     private CardCompositor cardCompositor;
+    private CardDetector cardDetector;
     private FrameProcessor frameProcessor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        OpenCVLoader.initDebug();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_fake_camera);
         enterImmersiveMode();
@@ -70,8 +75,9 @@ public class FakeCameraActivity extends AppCompatActivity implements HiddenContr
         frameRenderer = new FrameRenderer(surfaceView);
         cardRepository = new CardRepository(this);
         cardCompositor = new CardCompositor();
-        // CardDetector plugs in at Milestone 5 — unused for now.
-        frameProcessor = new FrameProcessor(null, cardCompositor, frameRenderer, cardRepository, forceState);
+        cardDetector = new CardDetector();
+        frameProcessor = new FrameProcessor(
+                cardDetector, cardCompositor, frameRenderer, cardRepository, forceState);
         cameraController = new CameraController(this, this);
         cameraController.start(frameProcessor);
     }
