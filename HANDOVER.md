@@ -19,8 +19,21 @@ week to week.
   screen, no crash, no black screen. Not yet verified: actual FPS on
   target device (acceptance criteria wants ≥24 fps) — nobody has measured
   this yet, worth doing before trusting Mode A timing later.
-- **Milestone 3 — not started.** `ForceState`, `CardRepository`,
-  `HiddenControls` are still stub classes with `TODO` comments only.
+- **Milestone 3 — done.** `ForceState` persists forced card (via `Card.Rank`/
+  `Suit` `fromCode`/`code` round-trip), mode, and trigger in
+  `SharedPreferences`; `ForceState.stepForcedCard(int)` steps/wraps through
+  all 52 cards for the volume-key handler. `CardRepository.getBitmap()`
+  loads + caches PNGs from `assets/cards/` (two placeholder cards in so far:
+  `7C`, `KH`). `HiddenControls.attachTo()` detects a 2s hold confined to the
+  top-left 80dp corner (`@SuppressLint("ClickableViewAccessibility")` —
+  deliberate: this control is meant to be undiscoverable, not accessible) and
+  opens `SettingsActivity`; `onKeyDown()` routes volume up/down to
+  `ForceState.stepForcedCard(±1)`. `FakeCameraActivity` implements
+  `HiddenControls.Listener` and wires all of this in `onCreate()`. Verified
+  on Aryan's Motorola: long-press opens the (still-unwired) Settings screen,
+  and volume up/down steps the forced card correctly (confirmed via a
+  temporary Logcat line, since removed — no on-screen feedback exists yet,
+  by design, until Mode A draws the overlay).
 
 ## Process note for this repo
 
@@ -64,12 +77,13 @@ Aryan hasn't answered them yet:
 
 ## Next step
 
-Milestone 3: `ForceState` (SharedPreferences-backed mode/trigger/forced
-card), `CardRepository` (loads `assets/cards/*.png`), wire up
-`HiddenControls` (2s long-press top-left → Settings, volume up/down → step
-forced card) in `FakeCameraActivity`. All three classes already exist as
-stubs with `TODO` comments pointing at this milestone — see
-`app/src/main/java/com/aryan/mirage/data/`, `.../controls/`.
+Milestone 4 — Mode A (fixed overlay): manual trigger first, then
+`AUTO_BRIGHTNESS`. This is the milestone the spec calls out to **test the
+trick with the magician**, so it matters more than usual that it actually
+works on-device before moving on. `CardCompositor` is still an unwritten
+stub — this is where it starts getting real logic (position/scale from
+`ForceState`'s not-yet-added overlay sliders, blur to match out-of-focus
+distance, ~120ms fade-in).
 
 Per the process note above: guide Aryan through writing this rather than
 writing it directly, unless he asks again.

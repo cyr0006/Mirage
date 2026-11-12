@@ -6,6 +6,9 @@ import android.graphics.Matrix;
 import androidx.camera.core.ImageProxy;
 
 import com.aryan.mirage.composite.CardCompositor;
+import com.aryan.mirage.data.Card;
+import com.aryan.mirage.data.CardRepository;
+import com.aryan.mirage.data.ForceState;
 import com.aryan.mirage.detect.CardDetector;
 
 import java.nio.ByteBuffer;
@@ -15,20 +18,40 @@ import java.nio.ByteBuffer;
  * (manual mirroring, rotation via imageInfo.getRotationDegrees()) and Modes A/B.
  *
  * Milestone 2 only needs a correctly oriented, mirrored frame on screen — detection
- * (CardDetector) and compositing (CardCompositor) aren't called yet, which is why
- * callers can pass null for both until Milestone 4/5.
+ * (CardDetector) isn't called yet, which is why callers can pass null for it until
+ * Milestone 5.
  */
 public class FrameProcessor {
+
+    // Temporary hardcoded values — become Settings sliders once overlay scale/position/
+    // blur sliders are wired up (SPEC.md "2. SettingsActivity").
+    private static final float FIXED_SCALE = 0.4f;
+    private static final float FIXED_BLUR = 0.3f;
 
     private final CardDetector cardDetector;
     private final CardCompositor cardCompositor;
     private final FrameRenderer frameRenderer;
+    private final CardRepository cardRepository;
+    private final ForceState forceState;
+
+    private boolean overlayVisible = false;
 
     public FrameProcessor(CardDetector cardDetector, CardCompositor cardCompositor,
-                           FrameRenderer frameRenderer) {
+                           FrameRenderer frameRenderer, CardRepository cardRepository,
+                           ForceState forceState) {
         this.cardDetector = cardDetector;
         this.cardCompositor = cardCompositor;
         this.frameRenderer = frameRenderer;
+        this.cardRepository = cardRepository;
+        this.forceState = forceState;
+    }
+
+    /**
+     * Called from HiddenControls' manual-trigger tap. Stands in for a real shutter-button
+     * tap until Milestone 7 builds the fake camera chrome.
+     */
+    public void toggleOverlayVisible() {
+        overlayVisible = !overlayVisible;
     }
 
     public void process(ImageProxy image) {
@@ -36,6 +59,14 @@ public class FrameProcessor {
             Bitmap raw = toBitmap(image);
             Bitmap oriented = mirrorAndRotate(raw, image.getImageInfo().getRotationDegrees());
             raw.recycle();
+
+            if (overlayVisible && forceState.getMode() == ForceState.Mode.FIXED_OVERLAY) {
+                Card forcedCard = forceState.getForcedCard();
+                Bitmap card = cardRepository.getBitmap(forcedCard);
+                cardCompositor.compositeFixed(
+                        oriented, card, forcedCard.toString(), FIXED_SCALE, FIXED_BLUR, 1f);
+            }
+
             frameRenderer.render(oriented);
             oriented.recycle();
         } finally {

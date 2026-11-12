@@ -17,6 +17,7 @@ public class HiddenControls {
         void onOpenSettingsRequested();
         void onNextCard();
         void onPreviousCard();
+        void onManualTriggerTap();
     }
 
     private final Listener listener;
@@ -29,11 +30,10 @@ public class HiddenControls {
     }
     private static final long LONG_PRESS_MS = 2000;
     private static final int CORNER_SIZE_DP = 80;
+    private static final long TAP_MAX_MS = 300;
 
-
-
-    @SuppressLint("ClickableViewAccessibility")
     /** Attach the long-press-corner gesture to the activity's root view. */
+    @SuppressLint("ClickableViewAccessibility")
     public void attachTo(View rootView) {
         float density = rootView.getResources().getDisplayMetrics().density;
         float cornerSizePx = CORNER_SIZE_DP * density;
@@ -51,6 +51,12 @@ public class HiddenControls {
                 case MotionEvent.ACTION_UP:
                 case MotionEvent.ACTION_CANCEL:
                     handler.removeCallbacks(openSettingsRunnable);
+                    if (!inCorner && event.getActionMasked() == MotionEvent.ACTION_UP) {
+                        long pressDuration = event.getEventTime() - event.getDownTime();
+                        if (pressDuration < TAP_MAX_MS) {
+                            listener.onManualTriggerTap();
+                        }
+                    }
                     return false;
                 default:
                     return false;

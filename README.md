@@ -10,8 +10,9 @@ Full spec, architecture, and build order: see [`CLAUDE.md`](CLAUDE.md).
 
 ## Status
 
-Milestone 3 in progress (state + hidden settings). See
-[`HANDOVER.md`](HANDOVER.md) for exact current state and next steps.
+Milestone 3 (state + hidden settings) done and verified on-device. Milestone
+4 (Mode A fixed overlay) next. See [`HANDOVER.md`](HANDOVER.md) for exact
+current state and next steps.
 
 ## Requirements
 

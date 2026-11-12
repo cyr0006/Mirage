@@ -18,7 +18,9 @@ import android.content.pm.PackageManager;
 import com.aryan.mirage.camera.CameraController;
 import com.aryan.mirage.camera.FrameProcessor;
 import com.aryan.mirage.camera.FrameRenderer;
+import com.aryan.mirage.composite.CardCompositor;
 import com.aryan.mirage.controls.HiddenControls;
+import com.aryan.mirage.data.CardRepository;
 import com.aryan.mirage.data.ForceState;
 
 /**
@@ -38,6 +40,9 @@ public class FakeCameraActivity extends AppCompatActivity implements HiddenContr
     private FrameRenderer frameRenderer;
     private HiddenControls hiddenControls;
     private ForceState forceState;
+    private CardRepository cardRepository;
+    private CardCompositor cardCompositor;
+    private FrameProcessor frameProcessor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +68,10 @@ public class FakeCameraActivity extends AppCompatActivity implements HiddenContr
         // Do not use PreviewView here — see SPEC.md "Key decisions".
         SurfaceView surfaceView = findViewById(R.id.surfaceView);
         frameRenderer = new FrameRenderer(surfaceView);
-        // CardDetector/CardCompositor plug in at Milestone 4/5 — unused for now.
-        FrameProcessor frameProcessor = new FrameProcessor(null, null, frameRenderer);
+        cardRepository = new CardRepository(this);
+        cardCompositor = new CardCompositor();
+        // CardDetector plugs in at Milestone 5 — unused for now.
+        frameProcessor = new FrameProcessor(null, cardCompositor, frameRenderer, cardRepository, forceState);
         cameraController = new CameraController(this, this);
         cameraController.start(frameProcessor);
     }
@@ -99,6 +106,14 @@ public class FakeCameraActivity extends AppCompatActivity implements HiddenContr
     public void onOpenSettingsRequested(){
         startActivity(new Intent(this, SettingsActivity.class));
     }
+
+    @Override
+    public void onManualTriggerTap() {
+        if (frameProcessor != null) {
+            frameProcessor.toggleOverlayVisible();
+        }
+    }
+
     private void enterImmersiveMode() {
         WindowInsetsController controller = getWindow().getInsetsController();
         if (controller != null) {

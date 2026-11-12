@@ -26,8 +26,8 @@ public class ForceState {
     }
 
     public Card getForcedCard() {
-        String rankCode = prefs.getString(KEY_RANK, Card.Rank.ACE.code);
-        String suitCode = prefs.getString(KEY_SUIT, Card.Suit.SPADES.code);
+        String rankCode = prefs.getString(KEY_RANK, Card.Rank.SEVEN.code);
+        String suitCode = prefs.getString(KEY_SUIT, Card.Suit.CLUBS.code);
         return new Card(Card.Rank.fromCode(rankCode), Card.Suit.fromCode(suitCode));
     }
 
@@ -64,7 +64,6 @@ public class ForceState {
         int total = ranks.length * suits.length;
         index = (index + direction + total) % total;
         setForcedCard(new Card(ranks[index % ranks.length], suits[index / ranks.length]));
-
     }
 
     // TODO: overlay blur, overlay scale/position, detection sensitivity, debug-overlay
