@@ -2,6 +2,7 @@ package com.aryan.mirage.camera;
 
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
+import android.os.SystemClock;
 
 import androidx.camera.core.ImageProxy;
 
@@ -27,6 +28,7 @@ public class FrameProcessor {
     // blur sliders are wired up (SPEC.md "2. SettingsActivity").
     private static final float FIXED_SCALE = 0.4f;
     private static final float FIXED_BLUR = 0.3f;
+    private static final long FADE_IN_MS = 120;
 
     private final CardDetector cardDetector;
     private final CardCompositor cardCompositor;
@@ -35,6 +37,7 @@ public class FrameProcessor {
     private final ForceState forceState;
 
     private boolean overlayVisible = false;
+    private long overlayShownAtMs = 0;
 
     public FrameProcessor(CardDetector cardDetector, CardCompositor cardCompositor,
                            FrameRenderer frameRenderer, CardRepository cardRepository,
@@ -52,6 +55,9 @@ public class FrameProcessor {
      */
     public void toggleOverlayVisible() {
         overlayVisible = !overlayVisible;
+        if (overlayVisible) {
+            overlayShownAtMs = SystemClock.elapsedRealtime();
+        }
     }
 
     public void process(ImageProxy image) {
@@ -63,8 +69,10 @@ public class FrameProcessor {
             if (overlayVisible && forceState.getMode() == ForceState.Mode.FIXED_OVERLAY) {
                 Card forcedCard = forceState.getForcedCard();
                 Bitmap card = cardRepository.getBitmap(forcedCard);
+                long elapsedMs = SystemClock.elapsedRealtime() - overlayShownAtMs;
+                float alpha = Math.min(1f, elapsedMs / (float) FADE_IN_MS);
                 cardCompositor.compositeFixed(
-                        oriented, card, forcedCard.toString(), FIXED_SCALE, FIXED_BLUR, 1f);
+                        oriented, card, forcedCard.toString(), FIXED_SCALE, FIXED_BLUR, alpha);
             }
 
             frameRenderer.render(oriented);
