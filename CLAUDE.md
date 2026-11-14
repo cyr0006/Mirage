@@ -3,7 +3,11 @@
 Hand this file to Claude at the start of a development session (or drop it in the repo root as `CLAUDE.md`).
 
 ## Working agreement for the session
-- **I (Aryan) write the code.** Claude guides step by step: explains what to do next, which APIs/classes to use, and why. Claude reviews my code and debugs with me, but does not write full implementations unless I ask.
+- **Claude writes the code directly (as of 2026-11-12, Aryan's explicit request).** This replaced the original "Aryan writes, Claude guides" agreement starting partway through Milestone 4, once the work moved into OpenCV/Mode B territory. Claude implements, compiles (`gradlew compileDebugJavaWithJavac`) to catch errors before handing it over, and Aryan tests on the real device.
+- **This is my first Android project** (iOS + Java background, no Android). Even though Claude writes the code now, keep explaining it the same way as before:
+  - Say what the code does *and* how it fits into the app's architecture — which other class calls it, what reads this state later, why this piece exists.
+  - Treat it like a dev tutorial: introduce new Android-specific APIs/concepts as they come up (lifecycle, `SharedPreferences`, `SurfaceView`, Gradle vs. Xcode build settings, etc.), ideally with an iOS/Java analogy.
+  - Keep explanations simple and concise — no padding.
 - Be direct and critical. Flag bad decisions early.
 - Work one milestone at a time (see Build Order). Don't move on until the current milestone runs on a real device.
 
@@ -74,6 +78,26 @@ Per frame, on a downscaled copy (e.g. 480 px wide):
 7. Blend: match the mean/std brightness of the detected region, apply blur at a similar level, add light noise, then composite with a feathered mask (blurred quad mask as alpha)
 8. Debug mode: draw the quad, corner indices and FPS
 
+**Status as of 2026-11-14: this classical pipeline is built and working, but has a demonstrated ceiling.** Two real calibration rounds (day, then night with an actual structural fix — locking camera AE/AWB) each fixed a real, data-confirmed problem, but each also surfaced a new one at the margins (small/dim/partially-revealed card). The pattern — every fix works, but only for the condition it was tested under — is itself the signal, not impatience. See `card-detection-writeup.txt` in the repo root for the full writeup (written for an external audience, but it's the accurate internal postmortem too).
+
+**Decision: move the detection step (not the whole pipeline) to a trained model.** Everything downstream of "here are the 4 corners" — warp, brightness-match, blend — stays as-is; only `CardDetector`'s job of finding those corners is being replaced. The classical pipeline isn't being thrown away: it's now the bootstrap/pre-fill mechanism for labeling training data (see below), and may end up staying in some form (e.g. as a fallback). This is a genuinely bigger initiative than anything else in this file — different toolchain (model training, TFLite), real data-collection work, no bounded "should take one session" estimate. See "ML detector initiative" below for where this actually stands.
+
+## ML detector initiative (started 2026-11-13/14)
+
+**Why**: see the Mode B status note above — classical thresholds don't generalize across lighting/distance/occlusion the way a trained model should.
+
+**Labels**: 4 corner points (TL/TR/BR/BL, matching `CardDetector.Quad` exactly) per frame where a card is visible, or an explicit "no card" for negative frames (hand alone, face, empty scene — these matter as much as positive examples, since false-positives on skin have been the recurring failure).
+
+**Target volume**: ~800-1,500 positive frames + ~200-400 negative frames. Bootstrapped from the existing classical detector for the easy/clean cases (pre-fill a guess, human just confirms or drags into place) rather than hand-labeling everything from zero — the classical pipeline is still useful here even though it's being replaced as the live detector.
+
+**Tooling already built**:
+- `tools/label-tool.html` — a standalone, no-install labeling tool. Open directly in Chrome/Edge. Picks a folder of frame images (auto-saves `labels.json` back into that folder as you go, via the File System Access API) or falls back to a plain file picker + manual download on other browsers. Can load a pre-filled `guesses.json` to speed up review. See the tool's own sidebar for controls/shortcuts.
+- **Not yet built**: the Python/OpenCV script that ports `CardDetector`'s logic to batch-process extracted frames and produce that `guesses.json` pre-fill file. This doesn't strictly need footage to exist first — it's a mechanical port of logic that already exists in `CardDetector.java` — so it can be written before or independent of the footage shoot.
+- **Not yet built**: frame extraction from video (one `ffmpeg` command per clip, sampling every 5th-10th frame, not every one) — trivial once there are actual video files to point it at.
+- **Not yet built**: the actual training pipeline (pick a lightweight architecture, train via transfer learning, convert to TFLite, integrate into the app). Realistic estimate given to Aryan: 1-2+ weeks with real iteration uncertainty, once labeled data exists.
+
+**Shoot list given to Aryan** (he may film with a friend's help): 15 short clips (~20-30s each) — for each of 3 lighting conditions (day / indoor artificial / night), capture (1) full-frame hold at varying position/rotation/distance, (2) the card's real entry/exit direction, swept in and out a few times, (3) entry from 1-2 other directions for robustness, (4) a deliberately bad/occluded grip, (5) a negative clip with no card — hand alone + face in frame.
+
 ## Acceptance criteria
 - At least 24 fps on the target phone with the card swap on
 - Overlay appears within ~150 ms of the card arriving; no visible flicker while the card is held steady
@@ -99,6 +123,6 @@ Per frame, on a downscaled copy (e.g. 480 px wide):
 - **IP**: copy the trick's concept, not the iOS app's assets or UI.
 
 ## Open questions (answer at the start of the session)
-- Target phone brand/model and Android version?
-- Which deck does he use (for photographing the card faces)?
-- Is Mode A enough for his routine, or is Mode B required?
+- **Target phone brand/model and Android version?** Still unanswered — still the actual blocker on Milestone 7 (fake camera chrome).
+- **Card assets**: only `7C.png` and `KH.png` exist in `assets/cards/`. The real routine only ever shows the card's **white face** to the camera (confirmed 2026-11-13) — the pink back is never relevant, so that's one less thing to worry about matching. All 52 white faces still need real photographs before any real performance, independent of all the ML work above.
+- ~~Is Mode A enough, or is Mode B required?~~ **Answered**: Mode B (tracked) is required. Don't re-ask this.

@@ -1,5 +1,9 @@
 package com.aryan.mirage.data;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
 /**
  * One playing card. See SPEC.md "Card assets": filenames are {rank}{suit}.png,
  * e.g. AS.png, 10H.png, KD.png.
@@ -15,6 +19,13 @@ public class Card {
         Rank(String code) {
             this.code = code;
         }
+
+        public static Rank fromCode(String code){
+            for (Rank r: values()){
+                if  (r.code.equals(code)) return r;
+            }
+            throw new IllegalArgumentException(("Unknown rank code: " + code));
+        }
     }
 
     public enum Suit {
@@ -24,6 +35,13 @@ public class Card {
 
         Suit(String code) {
             this.code = code;
+        }
+
+        public static Suit fromCode(String code){
+            for (Suit s: values()){
+                if  (s.code.equals(code)) return s;
+            }
+            throw new IllegalArgumentException(("Unknown suit code: " + code));
         }
     }
 
@@ -38,6 +56,35 @@ public class Card {
     /** Asset filename, e.g. "AS.png". */
     public String assetFileName() {
         return rank.code + suit.code + ".png";
+    }
+
+    /** All 52 cards, suit-major (same order ForceState.stepForcedCard indexes by) --
+     * used to populate the Settings card grid. */
+    public static List<Card> all() {
+        List<Card> cards = new ArrayList<>();
+        for (Suit suit : Suit.values()) {
+            for (Rank rank : Rank.values()) {
+                cards.add(new Card(rank, suit));
+            }
+        }
+        return cards;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (!(other instanceof Card)) {
+            return false;
+        }
+        Card card = (Card) other;
+        return rank == card.rank && suit == card.suit;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(rank, suit);
     }
 
     @Override

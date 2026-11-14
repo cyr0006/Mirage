@@ -1,0 +1,16 @@
+When a Fix Works, But the Pattern of Needing It Doesn't
+
+The task: detect a playing card in a live phone camera feed in real time, then overlay different graphics onto it, tracking its position as it moved. The approach was classical computer vision — no machine learning, just geometric and color-based rules applied frame by frame: find bright or edge-defined regions shaped like a rectangle, exclude skin-toned regions so a hand holding the card wouldn't get mistaken for part of it, then warp the overlay onto whatever shape was found.
+
+This worked. Each individual problem that came up got solved, and solved correctly, with evidence to back it:
+
+- The detected region was consistently bigger than the real card -> traced to camera overexposure bleeding past the card's true edge -> fixed with image processing to pull the boundary back in.
+- A hand gripping the card got absorbed into the detected shape, growing the overlay to include part of the hand -> fixed by identifying and removing skin-colored pixels before fitting any shape at all.
+- The same settings that worked during the day failed at night -> traced (with real sensor-data logging, not guesswork) to the camera's auto white-balance shifting color readings when the bright card entered frame -> fixed by locking the camera's exposure and white balance once the scene settled.
+- Even with that fix, a new problem appeared: when only a small sliver of the card was visible (just entering frame), its color reading became unreliable — simply because a tiny, dim patch of pixels in low light doesn't carry much reliable color information. No threshold adjustment fixes that; it's a property of how small, dim regions behave, not a number to tune.
+
+That last one is the tell. By that point, four rounds of real, data-backed fixes had each worked — but each one only covered the specific condition it was tested under. Every round surfaced a new edge case rather than running out of them. That's a different situation than "we haven't found the right setting yet." It's a signal that the chosen approach — fixed numeric rules, hand-picked from whatever conditions you tested in — doesn't generalize to a problem with this much real-world variability (lighting, distance, motion, sensor noise), no matter how carefully each rule is tuned.
+
+The alternative worth naming: a trained model, shown many real examples instead of hand-picked thresholds, learns to recognize the shape of the problem rather than memorizing the exact brightness and color values of one test session. That's a bigger undertaking — collecting real examples, training, and re-integrating — not a quick swap. But it's the right kind of bigger: solving the actual problem instead of chasing its latest symptom.
+
+The broader lesson: if your fourth fix in a row is still "found a new condition the rule doesn't cover," that's not a tuning problem anymore. The rule-based system is telling you it was never going to generalize — and no fifth fix changes that.

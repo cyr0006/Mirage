@@ -1,6 +1,8 @@
 package com.aryan.mirage;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.SurfaceView;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
@@ -16,13 +18,18 @@ import android.content.pm.PackageManager;
 import com.aryan.mirage.camera.CameraController;
 import com.aryan.mirage.camera.FrameProcessor;
 import com.aryan.mirage.camera.FrameRenderer;
+import com.aryan.mirage.composite.CardCompositor;
 import com.aryan.mirage.controls.HiddenControls;
+import com.aryan.mirage.data.CardRepository;
 import com.aryan.mirage.data.ForceState;
+import com.aryan.mirage.detect.CardDetector;
+
+import org.opencv.android.OpenCVLoader;
 
 /**
  * Launcher activity. See SPEC.md "1. FakeCameraActivity" and the architecture diagram.
  */
-public class FakeCameraActivity extends AppCompatActivity {
+public class FakeCameraActivity extends AppCompatActivity implements HiddenControls.Listener  {
 
     private final ActivityResultLauncher<String> cameraPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), granted -> {
@@ -36,10 +43,15 @@ public class FakeCameraActivity extends AppCompatActivity {
     private FrameRenderer frameRenderer;
     private HiddenControls hiddenControls;
     private ForceState forceState;
+    private CardRepository cardRepository;
+    private CardCompositor cardCompositor;
+    private CardDetector cardDetector;
+    private FrameProcessor frameProcessor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        OpenCVLoader.initDebug();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_fake_camera);
         enterImmersiveMode();
@@ -53,16 +65,19 @@ public class FakeCameraActivity extends AppCompatActivity {
             cameraPermissionLauncher.launch(Manifest.permission.CAMERA);
         }
 
-        // TODO (Milestone 3): wire up HiddenControls — long-press top-left (2s) -> Settings,
-        // volume up/down -> step forced card.
+        hiddenControls = new HiddenControls(this);
+        hiddenControls.attachTo(findViewById(R.id.surfaceView).getRootView());
     }
 
     private void startCamera() {
         // Do not use PreviewView here — see SPEC.md "Key decisions".
         SurfaceView surfaceView = findViewById(R.id.surfaceView);
         frameRenderer = new FrameRenderer(surfaceView);
-        // CardDetector/CardCompositor plug in at Milestone 4/5 — unused for now.
-        FrameProcessor frameProcessor = new FrameProcessor(null, null, frameRenderer);
+        cardRepository = new CardRepository(this);
+        cardCompositor = new CardCompositor();
+        cardDetector = new CardDetector();
+        frameProcessor = new FrameProcessor(
+                cardDetector, cardCompositor, frameRenderer, cardRepository, forceState);
         cameraController = new CameraController(this, this);
         cameraController.start(frameProcessor);
     }
@@ -73,6 +88,36 @@ public class FakeCameraActivity extends AppCompatActivity {
             cameraController.stop();
         }
         super.onDestroy();
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event ){
+        if (hiddenControls.onKeyDown(keyCode, event)){
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public void onNextCard(){
+        forceState.stepForcedCard(1);
+    }
+
+    @Override
+    public void onPreviousCard(){
+        forceState.stepForcedCard(-1);
+    }
+
+    @Override
+    public void onOpenSettingsRequested(){
+        startActivity(new Intent(this, SettingsActivity.class));
+    }
+
+    @Override
+    public void onManualTriggerTap() {
+        if (frameProcessor != null) {
+            frameProcessor.toggleOverlayVisible();
+        }
     }
 
     private void enterImmersiveMode() {

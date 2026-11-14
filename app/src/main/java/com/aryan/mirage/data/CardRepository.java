@@ -2,7 +2,10 @@ package com.aryan.mirage.data;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,8 +22,17 @@ public class CardRepository {
     }
 
     public Bitmap getBitmap(Card card) {
-        // TODO (Milestone 3): load from "cards/" + card.assetFileName() via
-        // context.getAssets().open(...), decode, cache in `cache`.
-        return cache.get(card.assetFileName());
+        String fileName = card.assetFileName();
+        Bitmap cached = cache.get(fileName);
+
+        if (cached != null) {
+            return cached;
+        }
+        try (InputStream stream = context.getAssets().open("cards/" + fileName)) {
+            Bitmap bitmap = BitmapFactory.decodeStream(stream);
+            return bitmap;
+        } catch (IOException e){
+            throw new RuntimeException("Missing card Asset: " + fileName, e);
+        }
     }
 }
