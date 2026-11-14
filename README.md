@@ -10,13 +10,15 @@ Full spec, architecture, and build order: see [`CLAUDE.md`](CLAUDE.md).
 
 ## Status
 
-Milestones 1-5 done. Milestone 6 (Mode B tracked overlay) substantially
-done — detection, warp, brightness-matching, feathered blend all working
-on-device; the spec's "light noise" detail still deferred. Settings UI
-(card grid, mode/trigger, sliders, debug FPS overlay) fully wired. Milestone
-7 (fake camera chrome) blocked on the target phone's exact model. See
-[`HANDOVER.md`](HANDOVER.md) for exact current state, open questions, and
-next steps.
+Milestones 1-6 done (Settings UI fully wired; Mode B's classical-CV
+detector works, warp/blend/composite included). **The classical detector is
+being replaced with a trained model** — two full lighting-calibration
+rounds each fixed a real problem and surfaced a new one at the margins,
+which is the point: see `card-detection-writeup.txt` for why. A labeling
+tool (`tools/label-tool.html`) is built; a footage shoot is in progress.
+Milestone 7 (fake camera chrome) still blocked on the target phone's exact
+model. See [`HANDOVER.md`](HANDOVER.md) for exact current state, the ML
+initiative's concrete next steps, and open questions.
 
 ## Requirements
 

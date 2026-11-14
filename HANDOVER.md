@@ -2,107 +2,138 @@
 
 Read this first, then [`CLAUDE.md`](CLAUDE.md) (the full spec). This file is
 session-to-session state; `CLAUDE.md` is the stable spec and doesn't change
-week to week.
+week to week — though as of 2026-11-14 it also carries a chunk of the ML
+pivot's own planning detail (see "ML detector initiative" in there), since
+that's substantial enough to count as spec, not just session chatter.
 
 ## Where things stand
 
 - **Branch**: `milestone-3-state-and-settings` (not yet merged to `main` —
   name is stale now, work has gone well past milestone 3)
-- **Milestones 1–3 — done.** Camera permission/portrait/immersive setup,
-  mirrored front-camera feed via `ImageAnalysis` (no `PreviewView`), and
-  `ForceState`/`CardRepository`/`HiddenControls` (2s corner long-press →
-  Settings, volume keys step the forced card). All verified on Aryan's
-  physical Motorola.
-- **Milestone 4 (Mode A) — done, manual trigger only.** Tap anywhere outside
-  the hidden corner toggles the overlay (stand-in for a real shutter-button
-  tap until Milestone 7 exists). `CardCompositor.compositeFixed()` draws the
-  forced card at a configurable scale/blur (now Settings sliders, see below)
-  with a 120ms fade-in, mirrored to match the already-mirrored camera feed.
-  **`AUTO_BRIGHTNESS` trigger was never built** — `Trigger` persists and has
-  a Settings spinner, but nothing reads it yet to auto-show/hide.
-- **Milestone 5 (OpenCV integration) — done.** `OpenCVLoader.initDebug()` in
-  `FakeCameraActivity.onCreate()`; `FrameProcessor` converts the oriented
-  frame to a `Mat` via `Utils.bitmapToMat` for `CardDetector`.
-- **Milestone 6 (Mode B) — substantially done.** `CardDetector.detect()`
-  tries an edge-based 4-point quad first (`Canny` → `dilate` →
-  `findContours` → `approxPolyDP`), falls back to a brightness-threshold
-  blob (Otsu) with skin-pixel subtraction when edges are too weak (a white
-  card has low edge contrast against skin/background) — see the class's own
-  doc comments for the full reasoning trail. Hysteresis (2 hits to show, 6
-  misses to hide) and EMA corner smoothing were pulled forward from
-  "Milestone 6 polish" into this pass, because raw unsmoothed detection was
-  unusable to even evaluate. `CardCompositor.compositeTracked()` does the
-  real warp (`getPerspectiveTransform` + `warpPerspective`), brightness/
-  contrast matching (`Core.meanStdDev`), edge softening, and a feathered
-  (not hard-cut) alpha blend. **Not done**: the spec's "light noise" step B.7
-  detail — lower priority, deferred.
-  - **Known tuning history, don't re-litigate from scratch**: thresholds were
-    repeatedly guessed, tested wrong, then corrected from real Logcat
-    calibration data (search this repo's chat history / the `CardDetector`
-    comments for specifics — aspect ratio, skin HSV bands, area fractions
-    are all justified from measured values, not guesses).
-  - **Decision**: the real trick only ever shows the card's **white face** to
-    the camera (back is pink, never shown) — so pink-card roll/yaw tuning
-    was explicitly abandoned as solving a problem that doesn't matter. Don't
-    re-open that thread unless the routine changes.
-- **Settings UI — fully wired.** Card grid (52-cell `RecyclerView`, text
-  labels not thumbnails — see why in `CardGridAdapter`'s doc comment), mode
-  + trigger spinners, overlay blur/scale sliders, detection-sensitivity
-  slider, and a debug-overlay switch that draws a live FPS counter. All
-  persist via `ForceState`/`SharedPreferences`.
-- **Milestone 7 (fake camera chrome) — not started, blocked.** Needs the
-  target phone's exact model (see Open Questions).
+- **Milestones 1–5 — done.** Camera/portrait/immersive setup, mirrored
+  front-camera feed, `ForceState`/`CardRepository`/`HiddenControls`, OpenCV
+  integration, Mode A (manual trigger only — `AUTO_BRIGHTNESS` never built).
+  All verified on Aryan's physical Motorola.
+- **Settings UI — fully wired.** Card grid, mode/trigger spinners,
+  overlay blur/scale sliders, detection-sensitivity slider, debug-overlay
+  switch (draws a live FPS counter). All persist via `SharedPreferences`.
+- **Milestone 6 (Mode B, classical CV) — built, working, and now
+  deliberately being superseded.** `CardDetector`/`CardCompositor` do the
+  full pipeline (edge quad → brightness-blob fallback with skin exclusion →
+  warp → brightness-match → feathered blend), including real fixes found
+  from on-device calibration data: halation correction, skin-pixel
+  subtraction so a gripping hand doesn't grow the detected region, a
+  camera AE/AWB lock (`CameraController`) to stop white-balance drift from
+  misreading the card as skin-colored, and a "partial entry" mode where the
+  overlay only shows the matching *slice* of the fake card while the real
+  one is still sliding into frame (`CardDetector.Quad.touches*` flags +
+  `CardCompositor.computeSrcCorners`).
+  - **Why "being superseded," not "broken"**: two full calibration rounds
+    (day, then night) each fixed a real, data-confirmed problem and each
+    also surfaced a *new* one at the margins (small/dim/partially-visible
+    card color readings become unreliable in low light — not a threshold
+    problem, a physics-of-small-samples problem). That pattern is the
+    actual decision driver, not one bad session. Full reasoning in
+    `card-detection-writeup.txt` (repo root) — written for Aryan's website,
+    but it's the accurate internal postmortem too.
+  - **Decision (2026-11-13/14): move detection to a trained model.**
+    Warp/blend/composite all stay as-is — only `CardDetector`'s corner-finding
+    job is being replaced. See "ML detector initiative" in `CLAUDE.md` for
+    the full plan. The classical pipeline isn't deleted: it's now also the
+    bootstrap/pre-fill mechanism for labeling training data.
+  - **Pink-card roll/yaw tuning was explicitly abandoned** (the real trick
+    only ever shows the white face) — don't re-open that thread.
+- **Milestone 7 (fake camera chrome) — not started, blocked** on the target
+  phone's exact model (see Open Questions).
+
+## ML initiative — exact state as of 2026-11-14
+
+This is the live thread. In order:
+
+1. **Labeling tool — built and smoke-tested working**: `tools/label-tool.html`.
+   Standalone, no install, open directly in Chrome/Edge. Picks a folder of
+   frame images, auto-saves `labels.json` back into that folder as you label
+   (File System Access API; falls back to manual download on other
+   browsers). Labels are 4 corner points (TL/TR/BR/BL) or an explicit "no
+   card." Can pre-load a `guesses.json` to speed up review.
+2. **Aryan is filming the shoot list** (possibly with a friend helping) —
+   see "ML detector initiative" in `CLAUDE.md` for the exact list: 15 clips,
+   ~20-30s each, 3 lighting conditions (day/artificial/night) × 5 scenarios
+   (full-frame hold, real entry direction, other entry directions, bad
+   occluded grip, negative/no-card). **This session ended here** — next
+   session starts once footage exists.
+3. **Not yet built, and this is the right next coding step regardless of
+   whether footage has landed yet**: a Python/OpenCV script that ports
+   `CardDetector`'s logic to batch-process extracted frames and produce a
+   `guesses.json` pre-fill file for the labeling tool. This is a mechanical
+   port of logic that already exists and is fully understood — it doesn't
+   need footage to exist first, so if Aryan starts a session before footage
+   is ready, build this.
+4. **Not yet built**: frame extraction from video (`ffmpeg`, sample every
+   5th-10th frame, not every one) — trivial, do it once real clips exist.
+5. **Not yet built**: the actual training pipeline (architecture choice,
+   transfer learning, TFLite conversion, Android integration). Estimate
+   given to Aryan: 1-2+ weeks with real iteration uncertainty, starting
+   once labeled data exists — don't undersell this when the session resumes.
 
 ## Process note for this repo
 
-**Claude writes the code directly now** (changed 2026-11-12, Aryan's
-explicit request, partway through Mode B once individual steps got large
-enough — OpenCV integration, perspective geometry — that typing them in by
-hand stopped being the useful part of the exercise). This replaces the
-original "Aryan writes, Claude guides" agreement. Compile
+**Claude writes the code directly** (changed 2026-11-12, Aryan's explicit
+request, partway through Mode B once individual steps got large enough —
+OpenCV integration, perspective geometry — that typing them in by hand
+stopped being the useful part of the exercise). Compile
 (`./gradlew compileDebugJavaWithJavac`) before handing anything over. Keep
-explaining what the code does and why, tutorial-style — that part of the
-agreement is unchanged (Aryan's first Android project, iOS/Java background).
+explaining what the code does and why, tutorial-style — Aryan's first
+Android project, iOS/Java background — that part is unchanged.
 
 ## Known environment gotchas (so you don't re-debug them)
 
-- This is Aryan's first Android project. He's done iOS + Java before, not
-  Android — lean on iOS/Java analogies when explaining Android-specific
-  concepts.
+- This is Aryan's first Android project. iOS/Java background, no prior
+  Android — lean on iOS/Java analogies.
 - First Android Studio open on this machine had a stale `.idea/` folder;
-  fixed by closing/reopening the project root fresh. If "Run button greyed
-  out" reappears, check `.idea/` is synced to the current Gradle files.
+  fixed by closing/reopening the project root fresh.
 - Local Gradle 9.6.0 + AGP 9.4.1 are cached; a different machine needs to
   download these.
-- Test device: a physical Motorola phone, USB debugging. Emulators are not
+- Test device: a physical Motorola phone, USB debugging. Emulators aren't
   reliable for judging this app — front-camera feed is synthetic.
 - `./gradlew.bat compileDebugJavaWithJavac --console=plain` is the fast
   sanity check used throughout this project before handing code back for
-  on-device testing — doesn't install/run anything, just confirms it builds.
+  on-device testing.
+- Calibration workflow that's worked repeatedly: add a temporary `Log.d`
+  (tag `"Mirage"`) printing the specific numbers in question, ask Aryan to
+  reproduce the real condition and filter Logcat on that tag, read the real
+  numbers back, decide from data. Don't guess thresholds. Remove the
+  logging once calibrated — it's been added and removed several times this
+  project; that's expected, not a sign something's wrong.
 
 ## Open questions — still unanswered (from CLAUDE.md)
 
 - **Target phone brand/model and Android version?** Still only "Motorola" —
-  this is now the actual blocker for Milestone 7.
-- **Card assets**: only `7C.png` and `KH.png` exist in `assets/cards/`.
-  **All 52 need to be photographed from the magician's real deck before any
-  real performance** — this is a physical task (CLAUDE.md: "flat, even
-  light, cropped to the card edge, ~500×700px"), not a code task, and it's
-  the actual critical-path blocker for using this for real, independent of
-  any remaining software work.
-- **Mode A vs. Mode B — answered.** Mode B (tracked) is required; this is
-  why all of Milestone 6 happened. Don't re-ask this one.
-- **FPS acceptance criterion (≥24fps)**: now actually measurable via the
-  debug-overlay FPS counter (Settings → toggle it on) — but nobody has
-  reported back a real number yet with the full Mode B pipeline (detection +
-  warp + brightness-match + feathered blend) running. Worth checking before
-  assuming performance is fine.
+  the actual blocker for Milestone 7.
+- **Card assets**: only `7C.png` and `KH.png` exist. All 52 **white faces**
+  (the pink back is never shown to camera, confirmed — don't worry about
+  matching it) still need real photographs before any real performance,
+  independent of the ML work.
+- ~~Is Mode A enough, or is Mode B required?~~ **Answered**: Mode B. Don't
+  re-ask.
+- **FPS acceptance criterion (≥24fps)**: measurable now via the debug FPS
+  counter, but nobody's reported back a number with the full Mode B
+  pipeline running. Worth checking at some point, not urgent right now
+  given the detector itself is being replaced.
 
 ## Next step
 
-No single obvious next step — last status check-in surfaced several
-candidates (see Open Questions above for the asset/phone blockers). Ask
-Aryan what he wants prioritized rather than assuming: more Mode B
-reliability work (e.g. testing the "Known risks" scenarios — white/bright
-ceiling, low light — never specifically stress-tested), the deferred light
-noise detail, or starting to close out the asset/phone-model blockers above.
+**Aryan is away filming.** When the next session starts:
+
+- **If footage has landed**: extract frames (`ffmpeg`, every 5th-10th
+  frame), build the Python pre-fill script (item 3 above) if not already
+  done, run it over the frames to produce `guesses.json`, then open
+  `tools/label-tool.html` and start labeling for real.
+- **If footage hasn't landed yet**: build the Python pre-fill script now
+  anyway (item 3) — it doesn't need footage to write, only to run, so
+  there's no reason to wait idle.
+
+Don't default back to "more classical CV tuning" as the next move — that
+thread was deliberately closed out this session (see the ML initiative
+section above) after two full calibration rounds showed the pattern of
+diminishing, condition-specific returns.
