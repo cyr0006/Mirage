@@ -86,6 +86,9 @@ public class FrameProcessor {
                 Utils.bitmapToMat(oriented, frameMat);
                 CardDetector.Quad quad = cardDetector.detect(frameMat);
                 if (quad != null) {
+                    // compositeTracked itself shows only the slice of the fake card that
+                    // corresponds to how much of the real one is actually visible --
+                    // see its own doc comment. Partial or full, this is the one path now.
                     Card forcedCard = forceState.getForcedCard();
                     Bitmap card = cardRepository.getBitmap(forcedCard);
                     cardCompositor.compositeTracked(frameMat, card, forcedCard.toString(), quad);
@@ -104,6 +107,27 @@ public class FrameProcessor {
             // Must always close, or CameraX stops delivering new frames after this one.
             image.close();
         }
+    }
+
+    /** Rolling once-a-second FPS estimate -- the spec's acceptance criterion is >=24fps,
+     * and this is the first time it's actually been measured rather than eyeballed. */
+    private void updateFps() {
+        framesSinceFpsUpdate++;
+        long now = SystemClock.elapsedRealtime();
+        long elapsed = now - lastFpsUpdateMs;
+        if (elapsed >= FPS_UPDATE_INTERVAL_MS) {
+            currentFps = framesSinceFpsUpdate * 1000f / elapsed;
+            framesSinceFpsUpdate = 0;
+            lastFpsUpdateMs = now;
+        }
+    }
+
+    private static void drawFpsCounter(Bitmap frame, float fps) {
+        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paint.setColor(Color.GREEN);
+        paint.setTextSize(48f);
+        new Canvas(frame).drawText(
+                String.format(java.util.Locale.US, "%.0f fps", fps), 24f, 64f, paint);
     }
 
     /** RGBA_8888 analysis frame -> Bitmap, cropping off any row-stride padding. */

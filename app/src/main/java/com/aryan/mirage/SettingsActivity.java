@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.aryan.mirage.data.ForceState;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.function.Consumer;
 
@@ -38,7 +40,15 @@ public class SettingsActivity extends AppCompatActivity {
         setUpSpinner(R.id.modeSpinner, ForceState.Mode.values(), forceState.getMode(), forceState::setMode);
         setUpSpinner(R.id.triggerSpinner, ForceState.Trigger.values(), forceState.getTrigger(), forceState::setTrigger);
 
-        // TODO: sliders and the debug-overlay switch, same persist-on-change pattern.
+        setUpSlider(R.id.overlayBlurSlider, forceState.getOverlayBlur(), forceState::setOverlayBlur);
+        setUpSlider(R.id.overlayScaleSlider, forceState.getOverlayScale(), forceState::setOverlayScale);
+        setUpSlider(R.id.detectionSensitivitySlider, forceState.getDetectionSensitivity(),
+                forceState::setDetectionSensitivity);
+
+        SwitchMaterial debugSwitch = findViewById(R.id.debugOverlaySwitch);
+        debugSwitch.setChecked(forceState.isDebugOverlayEnabled());
+        debugSwitch.setOnCheckedChangeListener(
+                (button, checked) -> forceState.setDebugOverlayEnabled(checked));
     }
 
     /** Both Mode and Trigger spinners follow the exact same pattern: populate from an
@@ -59,6 +69,30 @@ public class SettingsActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+    }
+
+    /** The three SeekBars (blur, scale, detection sensitivity) all map their 0-100
+     * integer progress onto the 0f-1f float range ForceState stores. */
+    private void setUpSlider(int seekBarId, float current, Consumer<Float> onChanged) {
+        SeekBar seekBar = findViewById(seekBarId);
+        seekBar.setMax(100);
+        seekBar.setProgress((int) (current * 100));
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (fromUser) {
+                    onChanged.accept(progress / 100f);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
             }
         });
     }

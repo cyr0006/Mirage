@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mirage Card Labeling Tool</title>
+<style>
+  body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: #1e1e1e;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  #toolbar {
+    padding: 10px 16px;
+    background: #2a2a2a;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #444;
+  }
+  #toolbar button {
+    background: #3a3a3a;
+    color: #eee;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  #toolbar button:hover { background: #484848; }
+  #toolbar button.danger { border-color: #a33; }
+  #status { font-size: 13px; color: #aaa; }
+  #saveIndicator { font-size: 13px; }
+  #main {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+  }
+  #canvasWrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    background: #141414;
+  }
+  canvas { cursor: crosshair; background: #000; }
+  #sidebar {
+    width: 260px;
+    background: #2a2a2a;
+    border-left: 1px solid #444;
+    padding: 14px;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-y: auto;
+  }
+  #sidebar h3 { margin: 0 0 6px; font-size: 14px; color: #ccc; }
+  #sidebar .key { background: #444; border-radius: 3px; padding: 1px 6px; font-family: monospace; }
+  #frameList { margin-top: 10px; max-height: 220px; overflow-y: auto; border: 1px solid #444; border-radius: 4px; }
+  #frameList div { padding: 3px 8px; cursor: pointer; font-size: 12px; }
+  #frameList div:hover { background: #3a3a3a; }
+  #frameList div.current { background: #3a5a8a; }
+  #frameList div.labeled::after { content: " \2713"; color: #6c6; }
+  #frameList div.nocard::after { content: " (none)"; color: #888; }
+  input[type=file] { color: #eee; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<div id="toolbar">
+  <button id="pickFolderBtn">Open folder (Chrome/Edge)</button>
+  <span>or</span>
+  <input type="file" id="pickFilesInput" multiple accept="image/*">
+  <button id="loadGuessesBtn">Load guesses.json</button>
+  <input type="file" id="loadGuessesInput" accept=".json" style="display:none">
+  <button id="downloadBtn">Download labels.json</button>
+  <span id="status">No images loaded</span>
+  <span id="saveIndicator"></span>
+</div>
+
+<div id="main">
+  <div id="canvasWrap">
+    <canvas id="canvas" width="800" height="600"></canvas>
+  </div>
+  <div id="sidebar">
+    <h3>How to label</h3>
+    <p>If a quad is already drawn (from a loaded guess), drag its 4 corners into place, or confirm it's already correct by just moving on.</p>
+    <p>If no quad exists, click 4 points on the card's corners in order: top-left, top-right, bottom-right, bottom-left.</p>
+    <h3>Shortcuts</h3>
+    <p>
+      <span class="key">&rarr;</span> / <span class="key">Space</span> next frame<br>
+      <span class="key">&larr;</span> previous frame<br>
+      <span class="key">N</span> mark "no card" / clear<br>
+      <span class="key">Backspace</span> undo last point (while placing)
+    </p>
+    <h3>Progress</h3>
+    <div id="progress">0 / 0 labeled</div>
+    <div id="frameList"></div>
+  </div>
+</div>
+
+<script>
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+const statusEl = document.getElementById('status');
+const saveIndicatorEl = document.getElementById('saveIndicator');
+const progressEl = document.getElementById('progress');
+const frameListEl = document.getElementById('frameList');
+
+let frames = [];        // [{ name, file }], sorted
+let currentIndex = -1;
+let currentImage = null;
+let labels = {};        // name -> { corners: [[x,y]x4] | null }
+let dirHandle = null;
+let scale = 1;           // canvas-display-px per original-image-px
+let draggingCornerIndex = -1;
+const CORNER_RADIUS = 7;
+const CORNER_LABELS = ['TL', 'TR', 'BR', 'BL'];
+
+function naturalSort(a, b) {
+  return a.name.localeCompare(b.name, undefined, { numeric: true });
+}
+
+function setStatus(text) {
+  statusEl.textContent = text;
+}
+
+function flashSaved(text) {
+  saveIndicatorEl.textContent = text;
+  setTimeout(() => { saveIndicatorEl.textContent = ''; }, 1500);
+}
+
+async function pickFolder() {
+  if (!window.showDirectoryPicker) {
+    alert('Your browser doesn\'t support folder access -- use "or" the file picker next to it instead.');
+    return;
+  }
+  dirHandle = await window.showDirectoryPicker();
+  const picked = [];
+  for await (const [name, handle] of dirHandle.entries()) {
+    if (handle.kind === 'file' && /\.(jpe?g|png)$/i.test(name)) {
+      picked.push({ name, file: await handle.getFile() });
+    }
+  }
+  picked.sort(naturalSort);
+  frames = picked;
+
+  try {
+    const labelsHandle = await dirHandle.getFileHandle('labels.json');
+    const text = await (await labelsHandle.getFile()).text();
+    labels = JSON.parse(text);
+    setStatus(`Loaded ${frames.length} frames + existing labels.json from folder.`);
+  } catch (e) {
+    labels = {};
+    setStatus(`Loaded ${frames.length} frames from folder.`);
+  }
+  goToFrame(0);
+}
+
+function pickFiles(fileList) {
+  frames = Array.from(fileList)
+      .filter(f => /\.(jpe?g|png)$/i.test(f.name))
+      .map(f => ({ name: f.name, file: f }))
+      .sort(naturalSort);
+  setStatus(`Loaded ${frames.length} frames (no folder access -- use "Download labels.json" to save).`);
+  goToFrame(0);
+}
+
+function loadGuesses(jsonText) {
+  const guesses = JSON.parse(jsonText);
+  for (const name in guesses) {
+    if (name in labels) continue;
+    // A guess of "found nothing" is not the same as a human confirming "no card" --
+    // leave it undefined so it still prompts review, same as a frame with no guess.
+    const corners = guesses[name].corners;
+    labels[name] = { corners: corners || undefined, pending: [] };
+  }
+  renderFrameList();
+  drawCurrent();
+  setStatus(`Merged in guesses for ${Object.keys(guesses).length} frames (existing labels kept).`);
+}
+
+async function goToFrame(index) {
+  if (index < 0 || index >= frames.length) return;
+  currentIndex = index;
+  const { name, file } = frames[index];
+  const url = URL.createObjectURL(file);
+  currentImage = await new Promise(resolve => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.src = url;
+  });
+
+  const maxW = 1000, maxH = 720;
+  scale = Math.min(maxW / currentImage.width, maxH / currentImage.height, 1);
+  canvas.width = currentImage.width * scale;
+  canvas.height = currentImage.height * scale;
+
+  if (!(name in labels)) {
+    labels[name] = { corners: undefined, pending: [] };
+  } else if (!labels[name].pending) {
+    labels[name].pending = [];
+  }
+
+  drawCurrent();
+  renderFrameList();
+  updateProgress();
+}
+
+function updateProgress() {
+  const decided = Object.values(labels).filter(l => l.corners !== undefined).length;
+  progressEl.textContent = `${decided} / ${frames.length} labeled`;
+}
+
+function currentLabel() {
+  return labels[frames[currentIndex].name];
+}
+
+function drawCurrent() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(currentImage, 0, 0, canvas.width, canvas.height);
+
+  const label = currentLabel();
+  if (!label) return;
+
+  if (label.corners === undefined && (!label.pending || label.pending.length === 0)) {
+    ctx.fillStyle = 'rgba(255,255,255,0.7)';
+    ctx.font = '16px system-ui';
+    ctx.fillText('Click 4 corners (TL, TR, BR, BL), or press N for "no card"', 14, 26);
+    return;
+  }
+
+  if (label.corners === null && (!label.pending || label.pending.length === 0)) {
+    ctx.fillStyle = 'rgba(200,50,50,0.85)';
+    ctx.font = 'bold 20px system-ui';
+    ctx.fillText('NO CARD', 14, 30);
+    return;
+  }
+
+  const points = label.corners || label.pending;
+  if (!points || points.length === 0) return;
+
+  ctx.strokeStyle = '#4caf50';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  points.forEach(([x, y], i) => {
+    const px = x * scale, py = y * scale;
+    if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+  });
+  if (points.length === 4) ctx.closePath();
+  ctx.stroke();
+
+  points.forEach(([x, y], i) => {
+    const px = x * scale, py = y * scale;
+    ctx.fillStyle = '#ff9800';
+    ctx.beginPath();
+    ctx.arc(px, py, CORNER_RADIUS, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = '#fff';
+    ctx.font = '11px monospace';
+    ctx.fillText(CORNER_LABELS[i] || '', px + 9, py - 9);
+  });
+}
+
+function hitTestCorner(px, py) {
+  const label = currentLabel();
+  const points = label.corners || label.pending;
+  if (!points) return -1;
+  for (let i = 0; i < points.length; i++) {
+    const [x, y] = points[i];
+    const dx = x * scale - px, dy = y * scale - py;
+    if (Math.hypot(dx, dy) <= CORNER_RADIUS + 4) return i;
+  }
+  return -1;
+}
+
+canvas.addEventListener('mousedown', e => {
+  const rect = canvas.getBoundingClientRect();
+  const px = e.clientX - rect.left, py = e.clientY - rect.top;
+  const label = currentLabel();
+  if (!label) return;
+
+  const hit = hitTestCorner(px, py);
+  if (hit >= 0) {
+    draggingCornerIndex = hit;
+    return;
+  }
+
+  if (!label.corners) {
+    if (!label.pending) label.pending = [];
+    if (label.pending.length < 4) {
+      label.pending.push([px / scale, py / scale]);
+      if (label.pending.length === 4) {
+        label.corners = label.pending;
+        label.pending = [];
+        maybeAutoSave();
+        updateProgress();
+      }
+      drawCurrent();
+      renderFrameList();
+    }
+  }
+});
+
+canvas.addEventListener('mousemove', e => {
+  if (draggingCornerIndex < 0) return;
+  const rect = canvas.getBoundingClientRect();
+  const px = e.clientX - rect.left, py = e.clientY - rect.top;
+  const label = currentLabel();
+  const points = label.corners || label.pending;
+  points[draggingCornerIndex] = [px / scale, py / scale];
+  drawCurrent();
+});
+
+canvas.addEventListener('mouseup', () => {
+  if (draggingCornerIndex >= 0) {
+    draggingCornerIndex = -1;
+    maybeAutoSave();
+  }
+});
+
+function markNoCard() {
+  const label = currentLabel();
+  label.corners = null;
+  label.pending = [];
+  drawCurrent();
+  renderFrameList();
+  updateProgress();
+  maybeAutoSave();
+}
+
+function undoPendingPoint() {
+  const label = currentLabel();
+  if (!label.corners && label.pending && label.pending.length > 0) {
+    label.pending.pop();
+    drawCurrent();
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (currentIndex < 0) return;
+  if (e.key === 'ArrowRight' || e.key === ' ') {
+    e.preventDefault();
+    goToFrame(currentIndex + 1);
+  } else if (e.key === 'ArrowLeft') {
+    e.preventDefault();
+    goToFrame(currentIndex - 1);
+  } else if (e.key.toLowerCase() === 'n') {
+    markNoCard();
+  } else if (e.key === 'Backspace') {
+    undoPendingPoint();
+  }
+});
+
+function renderFrameList() {
+  frameListEl.innerHTML = '';
+  frames.forEach((f, i) => {
+    const div = document.createElement('div');
+    div.textContent = f.name;
+    if (i === currentIndex) div.classList.add('current');
+    const label = labels[f.name];
+    if (label) {
+      if (label.corners) div.classList.add('labeled');
+      else if (label.corners === null) div.classList.add('nocard');
+    }
+    div.addEventListener('click', () => goToFrame(i));
+    frameListEl.appendChild(div);
+  });
+}
+
+function labelsToExport() {
+  const out = {};
+  for (const name in labels) {
+    if (labels[name].corners !== undefined) {
+      out[name] = { corners: labels[name].corners };
+    }
+  }
+  return out;
+}
+
+async function maybeAutoSave() {
+  if (!dirHandle) return;
+  try {
+    const handle = await dirHandle.getFileHandle('labels.json', { create: true });
+    const writable = await handle.createWritable();
+    await writable.write(JSON.stringify(labelsToExport(), null, 2));
+    await writable.close();
+    flashSaved('Saved to labels.json');
+  } catch (e) {
+    flashSaved('Auto-save failed -- use Download button');
+  }
+}
+
+function downloadLabels() {
+  const blob = new Blob([JSON.stringify(labelsToExport(), null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'labels.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+document.getElementById('pickFolderBtn').addEventListener('click', pickFolder);
+document.getElementById('pickFilesInput').addEventListener('change', e => pickFiles(e.target.files));
+document.getElementById('downloadBtn').addEventListener('click', downloadLabels);
+document.getElementById('loadGuessesBtn').addEventListener('click', () => document.getElementById('loadGuessesInput').click());
+document.getElementById('loadGuessesInput').addEventListener('change', e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  file.text().then(loadGuesses);
+});
+</script>
+</body>
+</html>

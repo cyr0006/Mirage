@@ -1,5 +1,7 @@
 package com.aryan.mirage.detect;
 
+import android.util.Log;
+
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
@@ -13,6 +15,7 @@ import org.opencv.imgproc.Imgproc;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * OpenCV quad detection. See SPEC.md "Mode B — Tracked replacement" steps 1-4.
@@ -25,21 +28,30 @@ import java.util.List;
  */
 public class CardDetector {
 
+    // TEMPORARY -- night-lighting calibration round 2, 2026-11-13. Remove once the
+    // thresholds below are re-tuned from real night-condition numbers. Filter Logcat on
+    // "Mirage" to read these.
+    private static final String TAG = "Mirage";
+
     private static final int WORKING_WIDTH = 480;
     // Pulled back toward an actual card's proportions -- these had been loosened round
     // after round to chase missed detections, to the point they'd happily match a hand
     // or a face too. The skin-tone check below is the real fix for that; these just stop
     // being "almost anything" shaped.
-    private static final double MIN_AREA_FRACTION = 0.04; // of the downscaled frame area
+    // Lowered from 0.04 on 2026-11-13 to catch a card sooner while it's still entering
+    // frame -- see detectBrightBlob's doc comment on why that path no longer also gates
+    // on aspect ratio, which is the other half of "catch it earlier."
+    private static final double MIN_AREA_FRACTION = 0.02; // of the downscaled frame area
     private static final double MAX_AREA_FRACTION = 0.35;
-    // Set from real measured values (see CardDetector calibration log, 2026-11-12): the
-    // white card's own aspect ratio ranged 1.06-1.95 across natural handling -- tighter
-    // bounds than that were silently rejecting genuine detections. (Briefly widened
-    // further for the pink card's roll/yaw tolerance, then reverted -- the real trick
-    // only ever shows the white face to the camera, so that was solving a problem that
-    // doesn't matter, at the cost of needless hand false-positive exposure.)
+    // Still used by the edge path (findBestQuad) -- set from real measured values (see
+    // CardDetector calibration log, 2026-11-12): the white card's own aspect ratio
+    // ranged 1.06-1.95 across natural handling.
     private static final double MIN_ASPECT_RATIO = 1.0;
     private static final double MAX_ASPECT_RATIO = 2.0;
+
+    // A corner this close to the downscaled frame's edge counts as "touching" it --
+    // i.e. the card's silhouette continues off-screen there. See touchedEdges().
+    private static final int BOUNDARY_TOLERANCE_PX = 4;
 
     // Also set from that calibration log: measured face hue clustered tightly at 27-37,
     // just outside the original 25 cutoff -- raised to 40 to actually catch it. White
@@ -93,19 +105,39 @@ public class CardDetector {
 
     /**
      * Result of one detection pass. Corners ordered TL, TR, BR, BL, in full-resolution
-     * coordinates (already scaled back up from the downscaled working copy).
+     * coordinates (already scaled back up from the downscaled working copy). The four
+     * {@code touches*} flags say whether that corner-side sits right at the frame's own
+     * edge -- meaning the card's real silhouette continues off-screen there, i.e. it's
+     * still (partly) entering or exiting frame. CardCompositor uses these to show only
+     * the matching slice of the fake card instead of squeezing the whole thing into
+     * whatever's currently visible.
      */
     public static class Quad {
         public final double[] topLeft;
         public final double[] topRight;
         public final double[] bottomRight;
         public final double[] bottomLeft;
+        public final boolean touchesLeft;
+        public final boolean touchesTop;
+        public final boolean touchesRight;
+        public final boolean touchesBottom;
 
-        public Quad(double[] topLeft, double[] topRight, double[] bottomRight, double[] bottomLeft) {
+        public Quad(double[] topLeft, double[] topRight, double[] bottomRight, double[] bottomLeft,
+                     boolean touchesLeft, boolean touchesTop, boolean touchesRight, boolean touchesBottom) {
             this.topLeft = topLeft;
             this.topRight = topRight;
             this.bottomRight = bottomRight;
             this.bottomLeft = bottomLeft;
+            this.touchesLeft = touchesLeft;
+            this.touchesTop = touchesTop;
+            this.touchesRight = touchesRight;
+            this.touchesBottom = touchesBottom;
+        }
+
+        /** True while any side is still off-screen -- the card is actively entering or
+         * exiting, as opposed to fully in frame and just being held/moved around. */
+        public boolean isPartial() {
+            return touchesLeft || touchesTop || touchesRight || touchesBottom;
         }
     }
 
@@ -121,7 +153,10 @@ public class CardDetector {
         if (raw != null) {
             hitStreak++;
             missStreak = 0;
-            lastGoodQuad = (lastGoodQuad == null) ? raw : smooth(lastGoodQuad, raw);
+            // No smoothing while the card is still entering/exiting (isPartial()) --
+            // EMA is for damping jitter on an otherwise-still card, and would otherwise
+            // just lag behind a silhouette that's genuinely changing fast and for real.
+            lastGoodQuad = (lastGoodQuad == null || raw.isPartial()) ? raw : smooth(lastGoodQuad, raw);
             if (!tracking && hitStreak >= HITS_TO_SHOW) {
                 tracking = true;
             }
@@ -144,7 +179,8 @@ public class CardDetector {
                 lerp(previous.topLeft, current.topLeft),
                 lerp(previous.topRight, current.topRight),
                 lerp(previous.bottomRight, current.bottomRight),
-                lerp(previous.bottomLeft, current.bottomLeft));
+                lerp(previous.bottomLeft, current.bottomLeft),
+                current.touchesLeft, current.touchesTop, current.touchesRight, current.touchesBottom);
     }
 
     private static double[] lerp(double[] previous, double[] current) {
@@ -202,7 +238,32 @@ public class CardDetector {
             contour.release();
         }
 
-        return corners == null ? null : toFullResolutionQuad(corners, scaleFactor);
+        if (corners == null) {
+            return null;
+        }
+        boolean[] touched = touchedEdges(corners, WORKING_WIDTH, workingHeight);
+        return toFullResolutionQuad(corners, scaleFactor, touched);
+    }
+
+    /** Which sides of the downscaled frame these corners sit right up against -- see
+     * the Quad class doc comment for what that means. */
+    private static boolean[] touchedEdges(Point[] corners, int frameWidth, int frameHeight) {
+        boolean left = false, top = false, right = false, bottom = false;
+        for (Point p : corners) {
+            if (p.x <= BOUNDARY_TOLERANCE_PX) {
+                left = true;
+            }
+            if (p.x >= frameWidth - 1 - BOUNDARY_TOLERANCE_PX) {
+                right = true;
+            }
+            if (p.y <= BOUNDARY_TOLERANCE_PX) {
+                top = true;
+            }
+            if (p.y >= frameHeight - 1 - BOUNDARY_TOLERANCE_PX) {
+                bottom = true;
+            }
+        }
+        return new boolean[] { left, top, right, bottom };
     }
 
     /** Largest contour that approximates to a convex 4-point, card-shaped quad. */
@@ -233,6 +294,9 @@ public class CardDetector {
                     double aspectRatio = aspectRatioOf(points);
                     double[] hueSat = meanHueSat(points);
                     boolean skin = looksLikeSkin(hueSat[0], hueSat[1]);
+                    Log.d(TAG, String.format(Locale.US,
+                            "edgeQuad: area=%.0f aspect=%.2f hue=%.0f sat=%.0f skin=%b",
+                            area, aspectRatio, hueSat[0], hueSat[1], skin));
                     isGoodQuad = aspectRatio >= MIN_ASPECT_RATIO && aspectRatio <= MAX_ASPECT_RATIO
                             && !skin && area > bestArea;
                 }
@@ -281,10 +345,20 @@ public class CardDetector {
      * card-white with hand-skin dilutes the skin signal below the threshold even though
      * part of the region clearly is skin. Removing skin pixels before shape-fitting,
      * pixel by pixel, catches it regardless of what fraction of the blob is hand.
+     *
+     * Deliberately does NOT gate on aspect ratio (unlike findBestQuad) -- a card still
+     * sliding into frame is clipped by the screen edge, so its visible silhouette is
+     * some other shape entirely until it's almost fully in view; requiring "looks like
+     * a full flat card" here would mean never tracking it until it already is one.
+     * Skin exclusion is the real defense against a bare hand here, not shape.
      */
     private Point[] detectBrightBlob(double minArea, double maxArea) {
         Imgproc.GaussianBlur(grey, lightBlurred, new Size(3, 3), 0);
-        Imgproc.threshold(lightBlurred, brightMask, 0, 255, Imgproc.THRESH_BINARY | Imgproc.THRESH_OTSU);
+        // threshold() returns the actual cutoff Otsu picked -- logging it directly shows
+        // how the brightness split is landing differently under different lighting.
+        double otsuThreshold = Imgproc.threshold(
+                lightBlurred, brightMask, 0, 255, Imgproc.THRESH_BINARY | Imgproc.THRESH_OTSU);
+        Log.d(TAG, String.format(Locale.US, "otsuThreshold=%.0f", otsuThreshold));
         Core.bitwise_and(brightMask, notSkinMask, brightMask);
         Imgproc.erode(brightMask, erodedBrightMask, erodeKernel);
 
@@ -305,12 +379,12 @@ public class CardDetector {
         Point[] result = null;
         if (largest != null) {
             Point[] ordered = approximateQuad(largest);
-
-            double aspectRatio = aspectRatioOf(ordered);
             double[] hueSat = meanHueSat(ordered);
             boolean skin = looksLikeSkin(hueSat[0], hueSat[1]);
-
-            if (aspectRatio >= MIN_ASPECT_RATIO && aspectRatio <= MAX_ASPECT_RATIO && !skin) {
+            Log.d(TAG, String.format(Locale.US,
+                    "brightBlob: area=%.0f aspect=%.2f hue=%.0f sat=%.0f skin=%b",
+                    largestArea, aspectRatioOf(ordered), hueSat[0], hueSat[1], skin));
+            if (!skin) {
                 result = ordered;
             }
         }
@@ -410,12 +484,13 @@ public class CardDetector {
         return new Point[] { topLeft, topRight, bottomRight, bottomLeft };
     }
 
-    private static Quad toFullResolutionQuad(Point[] corners, double scaleFactor) {
+    private static Quad toFullResolutionQuad(Point[] corners, double scaleFactor, boolean[] touched) {
         double[][] scaled = new double[4][2];
         for (int i = 0; i < 4; i++) {
             scaled[i][0] = corners[i].x / scaleFactor;
             scaled[i][1] = corners[i].y / scaleFactor;
         }
-        return new Quad(scaled[0], scaled[1], scaled[2], scaled[3]);
+        return new Quad(scaled[0], scaled[1], scaled[2], scaled[3],
+                touched[0], touched[1], touched[2], touched[3]);
     }
 }

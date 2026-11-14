@@ -524,3 +524,449 @@ Head
 2026-11-12 13:08:11.384  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18117 aspect=2.92 hue=108 sat=6 skin=false extent=0.49
 2026-11-12 13:08:11.734  5381-5598  Mirage                  com.aryan.mirage                     D  brightBlob: area=18151 aspect=2.92 hue=116 sat=7 skin=false extent=0.49
 
+SECOND ROUND OF TESTS ===========================================
+
+Test 1
+2026-11-13 23:40:43.958 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=136
+2026-11-13 23:40:44.011 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=139
+2026-11-13 23:40:44.089 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=142
+2026-11-13 23:40:44.164 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=141
+2026-11-13 23:40:44.239 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=140
+2026-11-13 23:40:44.296 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=137
+2026-11-13 23:40:44.358 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=135
+2026-11-13 23:40:44.428 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=132
+2026-11-13 23:40:44.480 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=129
+2026-11-13 23:40:44.541 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=127
+2026-11-13 23:40:44.604 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=125
+2026-11-13 23:40:44.664 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=125
+2026-11-13 23:40:44.721 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=123
+2026-11-13 23:40:44.782 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=122
+2026-11-13 23:40:44.839 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=122
+2026-11-13 23:40:44.905 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=121
+2026-11-13 23:40:44.966 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=120
+2026-11-13 23:40:45.021 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=117
+2026-11-13 23:40:45.084 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=115
+2026-11-13 23:40:45.146 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=111
+2026-11-13 23:40:45.149 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=84556 aspect=1.33 hue=11 sat=40 skin=false
+2026-11-13 23:40:45.198 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=109
+2026-11-13 23:40:45.201 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=59245 aspect=1.41 hue=12 sat=42 skin=true
+2026-11-13 23:40:45.266 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=106
+2026-11-13 23:40:45.268 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=15616 aspect=5.36 hue=12 sat=45 skin=true
+2026-11-13 23:40:45.322 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=104
+2026-11-13 23:40:45.325 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=44679 aspect=1.27 hue=12 sat=38 skin=false
+2026-11-13 23:40:45.383 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=104
+2026-11-13 23:40:45.386 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=67942 aspect=1.53 hue=11 sat=41 skin=true
+2026-11-13 23:40:45.439 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=105
+2026-11-13 23:40:45.510 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=106
+2026-11-13 23:40:45.564 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=107
+2026-11-13 23:40:45.623 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=108
+2026-11-13 23:40:45.684 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=107
+2026-11-13 23:40:45.737 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=106
+2026-11-13 23:40:45.803 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=106
+2026-11-13 23:40:45.864 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=105
+2026-11-13 23:40:45.920 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=105
+2026-11-13 23:40:45.983 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=104
+2026-11-13 23:40:46.044 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=103
+2026-11-13 23:40:46.103 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=102
+2026-11-13 23:40:46.163 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=102
+2026-11-13 23:40:46.217 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=101
+2026-11-13 23:40:46.288 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=101
+2026-11-13 23:40:46.344 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=101
+2026-11-13 23:40:46.402 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=101
+2026-11-13 23:40:46.466 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=104
+2026-11-13 23:40:46.525 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=107
+2026-11-13 23:40:46.580 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=114
+2026-11-13 23:40:46.646 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=119
+2026-11-13 23:40:46.712 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=121
+2026-11-13 23:40:46.755 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=124
+2026-11-13 23:40:46.823 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=124
+2026-11-13 23:40:46.871 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=125
+2026-11-13 23:40:46.950 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=123
+2026-11-13 23:40:46.993 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=123
+2026-11-13 23:40:47.072 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=122
+2026-11-13 23:40:47.117 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=121
+2026-11-13 23:40:47.197 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=121
+2026-11-13 23:40:47.245 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=122
+2026-11-13 23:40:47.307 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=122
+2026-11-13 23:40:47.362 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=122
+2026-11-13 23:40:47.423 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=122
+2026-11-13 23:40:47.482 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=121
+2026-11-13 23:40:47.544 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=122
+2026-11-13 23:40:47.607 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=123
+2026-11-13 23:40:47.670 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=123
+2026-11-13 23:40:47.724 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=124
+2026-11-13 23:40:47.790 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=123
+2026-11-13 23:40:47.844 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=121
+2026-11-13 23:40:47.905 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=121
+2026-11-13 23:40:47.967 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=116
+2026-11-13 23:40:48.026 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=115
+2026-11-13 23:40:48.077 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=114
+2026-11-13 23:40:48.116 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=113
+2026-11-13 23:40:48.166 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=112
+2026-11-13 23:40:48.224 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=111
+2026-11-13 23:40:48.227 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=107470 aspect=1.68 hue=42 sat=33 skin=false
+2026-11-13 23:40:48.267 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:48.270 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=104048 aspect=1.69 hue=37 sat=34 skin=false
+2026-11-13 23:40:48.332 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=109
+2026-11-13 23:40:48.334 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=102822 aspect=1.70 hue=42 sat=34 skin=false
+2026-11-13 23:40:48.404 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=109
+2026-11-13 23:40:48.406 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=98535 aspect=1.66 hue=47 sat=34 skin=false
+2026-11-13 23:40:48.472 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=108
+2026-11-13 23:40:48.473 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=97310 aspect=1.73 hue=55 sat=32 skin=false
+2026-11-13 23:40:48.538 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=107
+2026-11-13 23:40:48.540 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=98144 aspect=1.75 hue=73 sat=32 skin=false
+2026-11-13 23:40:48.608 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=105
+2026-11-13 23:40:48.609 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=99398 aspect=1.78 hue=89 sat=32 skin=false
+2026-11-13 23:40:48.675 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=104
+2026-11-13 23:40:48.676 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=98679 aspect=1.81 hue=83 sat=32 skin=false
+2026-11-13 23:40:48.747 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=106
+2026-11-13 23:40:48.749 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=94944 aspect=1.80 hue=103 sat=33 skin=false
+2026-11-13 23:40:48.814 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=106
+2026-11-13 23:40:48.815 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=93616 aspect=1.80 hue=101 sat=33 skin=false
+2026-11-13 23:40:48.882 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=106
+2026-11-13 23:40:48.884 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=92208 aspect=1.82 hue=111 sat=33 skin=false
+2026-11-13 23:40:48.954 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=106
+2026-11-13 23:40:48.956 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=92074 aspect=1.80 hue=109 sat=31 skin=false
+2026-11-13 23:40:49.021 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=106
+2026-11-13 23:40:49.022 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=89556 aspect=1.81 hue=109 sat=30 skin=false
+2026-11-13 23:40:49.094 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=106
+2026-11-13 23:40:49.095 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=89837 aspect=1.81 hue=111 sat=29 skin=false
+2026-11-13 23:40:49.158 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=105
+2026-11-13 23:40:49.160 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=92709 aspect=1.82 hue=113 sat=27 skin=false
+2026-11-13 23:40:49.223 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=107
+2026-11-13 23:40:49.224 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=90372 aspect=1.69 hue=113 sat=28 skin=false
+2026-11-13 23:40:49.291 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=107
+2026-11-13 23:40:49.292 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=90981 aspect=1.68 hue=112 sat=29 skin=false
+2026-11-13 23:40:49.357 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=107
+2026-11-13 23:40:49.358 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=91454 aspect=1.64 hue=111 sat=30 skin=false
+2026-11-13 23:40:49.423 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=107
+2026-11-13 23:40:49.425 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=92859 aspect=1.65 hue=112 sat=30 skin=false
+2026-11-13 23:40:49.493 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=107
+2026-11-13 23:40:49.495 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=92881 aspect=1.65 hue=113 sat=30 skin=false
+2026-11-13 23:40:49.559 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=107
+2026-11-13 23:40:49.561 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=91879 aspect=1.64 hue=114 sat=30 skin=false
+2026-11-13 23:40:49.623 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=108
+2026-11-13 23:40:49.625 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=89223 aspect=1.69 hue=114 sat=30 skin=false
+2026-11-13 23:40:49.689 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=109
+2026-11-13 23:40:49.691 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=87666 aspect=1.70 hue=114 sat=29 skin=false
+2026-11-13 23:40:49.756 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=109
+2026-11-13 23:40:49.757 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=87193 aspect=1.70 hue=114 sat=29 skin=false
+2026-11-13 23:40:49.823 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:49.825 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=85649 aspect=1.71 hue=117 sat=29 skin=false
+2026-11-13 23:40:49.888 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=109
+2026-11-13 23:40:49.889 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=88026 aspect=1.70 hue=117 sat=30 skin=false
+2026-11-13 23:40:49.954 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:49.955 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=86939 aspect=1.72 hue=117 sat=29 skin=false
+2026-11-13 23:40:50.015 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:50.017 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=86767 aspect=1.72 hue=117 sat=29 skin=false
+2026-11-13 23:40:50.082 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:50.084 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=86367 aspect=1.71 hue=117 sat=29 skin=false
+2026-11-13 23:40:50.155 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:50.158 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=85858 aspect=1.73 hue=117 sat=29 skin=false
+2026-11-13 23:40:50.222 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:50.224 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=86259 aspect=1.70 hue=117 sat=29 skin=false
+2026-11-13 23:40:50.289 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:50.291 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=86715 aspect=1.68 hue=118 sat=29 skin=false
+2026-11-13 23:40:50.354 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:50.356 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=86832 aspect=1.67 hue=117 sat=29 skin=false
+2026-11-13 23:40:50.419 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:50.420 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=85570 aspect=1.65 hue=118 sat=29 skin=false
+2026-11-13 23:40:50.484 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:50.485 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=85423 aspect=1.66 hue=117 sat=29 skin=false
+2026-11-13 23:40:50.551 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:50.553 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=85930 aspect=1.67 hue=117 sat=29 skin=false
+2026-11-13 23:40:50.612 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:50.614 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=85991 aspect=1.65 hue=118 sat=29 skin=false
+2026-11-13 23:40:50.673 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:50.675 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=85643 aspect=1.65 hue=116 sat=30 skin=false
+2026-11-13 23:40:50.744 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:50.746 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=85302 aspect=1.65 hue=117 sat=30 skin=false
+2026-11-13 23:40:50.812 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:50.813 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=84439 aspect=1.65 hue=116 sat=29 skin=false
+2026-11-13 23:40:50.875 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:50.876 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=85120 aspect=1.69 hue=117 sat=29 skin=false
+2026-11-13 23:40:50.942 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:50.944 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=85501 aspect=1.70 hue=117 sat=28 skin=false
+2026-11-13 23:40:51.007 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=109
+2026-11-13 23:40:51.008 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=87363 aspect=1.72 hue=116 sat=28 skin=false
+2026-11-13 23:40:51.067 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:51.068 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=85511 aspect=1.78 hue=117 sat=27 skin=false
+2026-11-13 23:40:51.134 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:51.135 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=85045 aspect=1.75 hue=118 sat=27 skin=false
+2026-11-13 23:40:51.206 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:51.208 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=84984 aspect=1.79 hue=118 sat=27 skin=false
+2026-11-13 23:40:51.269 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=110
+2026-11-13 23:40:51.271 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=85253 aspect=1.76 hue=118 sat=27 skin=false
+2026-11-13 23:40:51.331 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=111
+2026-11-13 23:40:51.332 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=83206 aspect=1.82 hue=118 sat=26 skin=false
+2026-11-13 23:40:51.404 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=111
+2026-11-13 23:40:51.406 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=83335 aspect=1.84 hue=119 sat=26 skin=false
+2026-11-13 23:40:51.468 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=111
+2026-11-13 23:40:51.470 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=83044 aspect=1.84 hue=118 sat=26 skin=false
+2026-11-13 23:40:51.526 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=111
+2026-11-13 23:40:51.527 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=84484 aspect=1.82 hue=118 sat=26 skin=false
+2026-11-13 23:40:51.587 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=111
+2026-11-13 23:40:51.588 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=83696 aspect=1.80 hue=118 sat=26 skin=false
+2026-11-13 23:40:51.653 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=111
+2026-11-13 23:40:51.655 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=83493 aspect=1.79 hue=118 sat=27 skin=false
+2026-11-13 23:40:51.716 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=111
+2026-11-13 23:40:51.718 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=83394 aspect=1.77 hue=118 sat=27 skin=false
+2026-11-13 23:40:51.777 27774-27988 Mirage                  com.aryan.mirage                     D  otsuThreshold=111
+2026-11-13 23:40:51.779 27774-27988 Mirage                  com.aryan.mirage                     D  brightBlob: area=84013 aspect=1.74 hue=117 sat=28 skin=false
+
+
+Test 2
+2026-11-13 23:49:56.097 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=73
+2026-11-13 23:49:56.161 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=73
+2026-11-13 23:49:56.237 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=74
+2026-11-13 23:49:56.293 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=74
+2026-11-13 23:49:56.377 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=125
+2026-11-13 23:49:56.443 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=126
+2026-11-13 23:49:56.513 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=128
+2026-11-13 23:49:56.582 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=131
+2026-11-13 23:49:56.657 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=133
+2026-11-13 23:49:56.722 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=135
+2026-11-13 23:49:56.796 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=136
+2026-11-13 23:49:56.797 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=7328 aspect=16.39 hue=15 sat=26 skin=false
+2026-11-13 23:49:56.864 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=138
+2026-11-13 23:49:56.868 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=9168 aspect=14.09 hue=15 sat=23 skin=false
+2026-11-13 23:49:56.931 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=140
+2026-11-13 23:49:56.932 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=11200 aspect=14.09 hue=22 sat=5 skin=false
+2026-11-13 23:49:56.996 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=142
+2026-11-13 23:49:56.997 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=13285 aspect=16.77 hue=20 sat=3 skin=false
+2026-11-13 23:49:57.065 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=142
+2026-11-13 23:49:57.067 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=14277 aspect=12.70 hue=21 sat=3 skin=false
+2026-11-13 23:49:57.137 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=143
+2026-11-13 23:49:57.141 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=14882 aspect=13.93 hue=21 sat=3 skin=false
+2026-11-13 23:49:57.206 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=143
+2026-11-13 23:49:57.208 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=14905 aspect=12.31 hue=20 sat=3 skin=false
+2026-11-13 23:49:57.274 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=143
+2026-11-13 23:49:57.275 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=15061 aspect=9.57 hue=23 sat=3 skin=false
+2026-11-13 23:49:57.345 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=143
+2026-11-13 23:49:57.348 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=15594 aspect=8.96 hue=17 sat=16 skin=false
+2026-11-13 23:49:57.416 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=143
+2026-11-13 23:49:57.417 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=16181 aspect=11.97 hue=23 sat=3 skin=false
+2026-11-13 23:49:57.486 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=144
+2026-11-13 23:49:57.488 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=16679 aspect=8.98 hue=17 sat=14 skin=false
+2026-11-13 23:49:57.558 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=144
+2026-11-13 23:49:57.560 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=17546 aspect=8.43 hue=16 sat=14 skin=false
+2026-11-13 23:49:57.626 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=145
+2026-11-13 23:49:57.628 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=18770 aspect=9.72 hue=17 sat=3 skin=false
+2026-11-13 23:49:57.697 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=145
+2026-11-13 23:49:57.698 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=20131 aspect=9.24 hue=16 sat=3 skin=false
+2026-11-13 23:49:57.768 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=146
+2026-11-13 23:49:57.769 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=21537 aspect=8.77 hue=17 sat=4 skin=false
+2026-11-13 23:49:57.832 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=146
+2026-11-13 23:49:57.833 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=23125 aspect=8.06 hue=19 sat=4 skin=false
+2026-11-13 23:49:57.904 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=147
+2026-11-13 23:49:57.905 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=25120 aspect=6.95 hue=18 sat=4 skin=false
+2026-11-13 23:49:57.977 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=147
+2026-11-13 23:49:57.978 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=27206 aspect=5.33 hue=17 sat=10 skin=false
+2026-11-13 23:49:58.051 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=148
+2026-11-13 23:49:58.053 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=29762 aspect=4.95 hue=18 sat=9 skin=false
+2026-11-13 23:49:58.117 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=148
+2026-11-13 23:49:58.119 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=32891 aspect=4.43 hue=22 sat=9 skin=false
+2026-11-13 23:49:58.185 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=149
+2026-11-13 23:49:58.187 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=35536 aspect=4.10 hue=27 sat=8 skin=false
+2026-11-13 23:49:58.258 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=150
+2026-11-13 23:49:58.260 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=35620 aspect=3.75 hue=31 sat=8 skin=false
+2026-11-13 23:49:58.332 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=151
+2026-11-13 23:49:58.333 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=36996 aspect=3.66 hue=27 sat=7 skin=false
+2026-11-13 23:49:58.399 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=151
+2026-11-13 23:49:58.400 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=40243 aspect=3.37 hue=26 sat=8 skin=false
+2026-11-13 23:49:58.470 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=152
+2026-11-13 23:49:58.472 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=41629 aspect=3.28 hue=29 sat=7 skin=false
+2026-11-13 23:49:58.537 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=152
+2026-11-13 23:49:58.538 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=45526 aspect=3.38 hue=35 sat=3 skin=false
+2026-11-13 23:49:58.606 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=153
+2026-11-13 23:49:58.608 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=47053 aspect=3.23 hue=36 sat=3 skin=false
+2026-11-13 23:49:58.680 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=154
+2026-11-13 23:49:58.682 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=48208 aspect=3.15 hue=33 sat=3 skin=false
+2026-11-13 23:49:58.745 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=154
+2026-11-13 23:49:58.746 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=49583 aspect=3.09 hue=39 sat=3 skin=false
+2026-11-13 23:49:58.814 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=155
+2026-11-13 23:49:58.815 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=51223 aspect=2.99 hue=34 sat=3 skin=false
+2026-11-13 23:49:58.893 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=155
+2026-11-13 23:49:58.895 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=53246 aspect=2.88 hue=38 sat=3 skin=false
+2026-11-13 23:49:58.962 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=156
+2026-11-13 23:49:58.963 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=54657 aspect=2.79 hue=42 sat=3 skin=false
+2026-11-13 23:49:59.028 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=157
+2026-11-13 23:49:59.029 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=56472 aspect=2.69 hue=42 sat=3 skin=false
+2026-11-13 23:49:59.090 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=158
+2026-11-13 23:49:59.092 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=57679 aspect=2.63 hue=41 sat=3 skin=false
+2026-11-13 23:49:59.171 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=158
+2026-11-13 23:49:59.173 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=59684 aspect=2.57 hue=41 sat=2 skin=false
+2026-11-13 23:49:59.245 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=159
+2026-11-13 23:49:59.247 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=61071 aspect=2.50 hue=41 sat=3 skin=false
+2026-11-13 23:49:59.312 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=160
+2026-11-13 23:49:59.314 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=62045 aspect=2.47 hue=41 sat=3 skin=false
+2026-11-13 23:49:59.377 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=160
+2026-11-13 23:49:59.378 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=62899 aspect=2.44 hue=42 sat=3 skin=false
+2026-11-13 23:49:59.447 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=160
+2026-11-13 23:49:59.449 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=63983 aspect=2.39 hue=40 sat=2 skin=false
+2026-11-13 23:49:59.512 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=160
+2026-11-13 23:49:59.514 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=65646 aspect=2.32 hue=40 sat=2 skin=false
+2026-11-13 23:49:59.602 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=160
+2026-11-13 23:49:59.604 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=69138 aspect=2.12 hue=39 sat=5 skin=false
+2026-11-13 23:49:59.660 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=161
+2026-11-13 23:49:59.662 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=72356 aspect=2.03 hue=41 sat=4 skin=false
+2026-11-13 23:49:59.729 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=161
+2026-11-13 23:49:59.731 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=75921 aspect=1.93 hue=40 sat=4 skin=false
+2026-11-13 23:49:59.803 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=161
+2026-11-13 23:49:59.804 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=82476 aspect=1.81 hue=42 sat=5 skin=false
+2026-11-13 23:49:59.870 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=162
+2026-11-13 23:49:59.872 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=89332 aspect=1.72 hue=42 sat=3 skin=false
+2026-11-13 23:49:59.937 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=162
+2026-11-13 23:49:59.939 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=94463 aspect=1.61 hue=41 sat=3 skin=false
+2026-11-13 23:50:00.010 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=163
+2026-11-13 23:50:00.012 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=99064 aspect=1.59 hue=44 sat=3 skin=false
+2026-11-13 23:50:00.068 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=163
+2026-11-13 23:50:00.070 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=100710 aspect=1.62 hue=47 sat=3 skin=false
+2026-11-13 23:50:00.150 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=163
+2026-11-13 23:50:00.151 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=99492 aspect=1.58 hue=48 sat=3 skin=false
+2026-11-13 23:50:00.219 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=162
+2026-11-13 23:50:00.221 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=99272 aspect=1.58 hue=49 sat=3 skin=false
+2026-11-13 23:50:00.286 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=161
+2026-11-13 23:50:00.287 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=98452 aspect=1.55 hue=52 sat=3 skin=false
+2026-11-13 23:50:00.353 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=160
+2026-11-13 23:50:00.355 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=97687 aspect=1.56 hue=57 sat=4 skin=false
+2026-11-13 23:50:00.424 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=159
+2026-11-13 23:50:00.426 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=97082 aspect=1.55 hue=63 sat=4 skin=false
+2026-11-13 23:50:00.493 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=160
+2026-11-13 23:50:00.494 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=96050 aspect=1.61 hue=67 sat=5 skin=false
+2026-11-13 23:50:00.562 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=160
+2026-11-13 23:50:00.563 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=97164 aspect=1.62 hue=70 sat=5 skin=false
+2026-11-13 23:50:00.635 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=159
+2026-11-13 23:50:00.637 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=97751 aspect=1.60 hue=70 sat=5 skin=false
+2026-11-13 23:50:00.705 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=158
+2026-11-13 23:50:00.706 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=97108 aspect=1.60 hue=71 sat=5 skin=false
+2026-11-13 23:50:00.776 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=158
+2026-11-13 23:50:00.778 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=96170 aspect=1.60 hue=72 sat=5 skin=false
+2026-11-13 23:50:00.843 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=157
+2026-11-13 23:50:00.844 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=95439 aspect=1.60 hue=73 sat=5 skin=false
+2026-11-13 23:50:00.915 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=156
+2026-11-13 23:50:00.916 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=94779 aspect=1.60 hue=77 sat=6 skin=false
+2026-11-13 23:50:00.986 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=155
+2026-11-13 23:50:00.988 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=93480 aspect=1.59 hue=79 sat=6 skin=false
+2026-11-13 23:50:01.055 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=154
+2026-11-13 23:50:01.056 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=92739 aspect=1.63 hue=81 sat=6 skin=false
+2026-11-13 23:50:01.124 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=154
+2026-11-13 23:50:01.126 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=92089 aspect=1.63 hue=85 sat=7 skin=false
+2026-11-13 23:50:01.193 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=153
+2026-11-13 23:50:01.195 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=91318 aspect=1.64 hue=87 sat=7 skin=false
+2026-11-13 23:50:01.264 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=153
+2026-11-13 23:50:01.265 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=91189 aspect=1.62 hue=90 sat=8 skin=false
+2026-11-13 23:50:01.331 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=152
+2026-11-13 23:50:01.333 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=91371 aspect=1.64 hue=91 sat=8 skin=false
+2026-11-13 23:50:01.410 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=152
+2026-11-13 23:50:01.412 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=91832 aspect=1.66 hue=91 sat=8 skin=false
+2026-11-13 23:50:01.472 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=152
+2026-11-13 23:50:01.474 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=91734 aspect=1.66 hue=96 sat=10 skin=false
+2026-11-13 23:50:01.547 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=152
+2026-11-13 23:50:01.548 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=91293 aspect=1.66 hue=96 sat=10 skin=false
+2026-11-13 23:50:01.614 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=152
+2026-11-13 23:50:01.616 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=91092 aspect=1.67 hue=95 sat=10 skin=false
+2026-11-13 23:50:01.683 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=152
+2026-11-13 23:50:01.685 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=90564 aspect=1.67 hue=94 sat=9 skin=false
+2026-11-13 23:50:01.756 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=152
+2026-11-13 23:50:01.757 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=90093 aspect=1.65 hue=92 sat=10 skin=false
+2026-11-13 23:50:01.825 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=152
+2026-11-13 23:50:01.826 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=89905 aspect=1.66 hue=91 sat=10 skin=false
+2026-11-13 23:50:01.899 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=152
+2026-11-13 23:50:01.900 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=89883 aspect=1.66 hue=91 sat=9 skin=false
+2026-11-13 23:50:01.968 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=153
+2026-11-13 23:50:01.970 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=90405 aspect=1.66 hue=91 sat=9 skin=false
+2026-11-13 23:50:02.039 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=153
+2026-11-13 23:50:02.041 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=90478 aspect=1.67 hue=91 sat=9 skin=false
+2026-11-13 23:50:02.105 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=153
+2026-11-13 23:50:02.107 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=89932 aspect=1.66 hue=88 sat=9 skin=false
+2026-11-13 23:50:02.174 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=153
+2026-11-13 23:50:02.176 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=90165 aspect=1.66 hue=90 sat=8 skin=false
+2026-11-13 23:50:02.247 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=154
+2026-11-13 23:50:02.249 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=90764 aspect=1.65 hue=88 sat=8 skin=false
+2026-11-13 23:50:02.313 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=154
+2026-11-13 23:50:02.315 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=90932 aspect=1.66 hue=85 sat=7 skin=false
+2026-11-13 23:50:02.388 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=154
+2026-11-13 23:50:02.390 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=91116 aspect=1.61 hue=81 sat=6 skin=false
+2026-11-13 23:50:02.459 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=155
+2026-11-13 23:50:02.460 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=90389 aspect=1.61 hue=77 sat=6 skin=false
+2026-11-13 23:50:02.533 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=155
+2026-11-13 23:50:02.534 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=90724 aspect=1.57 hue=75 sat=5 skin=false
+2026-11-13 23:50:02.603 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=156
+2026-11-13 23:50:02.605 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=90857 aspect=1.56 hue=70 sat=5 skin=false
+2026-11-13 23:50:02.668 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=156
+2026-11-13 23:50:02.669 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=90279 aspect=1.57 hue=70 sat=4 skin=false
+2026-11-13 23:50:02.741 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=157
+2026-11-13 23:50:02.742 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=88838 aspect=1.60 hue=65 sat=4 skin=false
+2026-11-13 23:50:02.804 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=157
+2026-11-13 23:50:02.805 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=87900 aspect=1.58 hue=61 sat=4 skin=false
+2026-11-13 23:50:02.882 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=158
+2026-11-13 23:50:02.884 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=87671 aspect=1.57 hue=54 sat=3 skin=false
+2026-11-13 23:50:02.953 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=158
+2026-11-13 23:50:02.956 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=87380 aspect=1.55 hue=52 sat=3 skin=false
+2026-11-13 23:50:03.022 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=158
+2026-11-13 23:50:03.024 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=88048 aspect=1.56 hue=50 sat=3 skin=false
+2026-11-13 23:50:03.084 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=160
+2026-11-13 23:50:03.086 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=88379 aspect=1.58 hue=46 sat=3 skin=false
+2026-11-13 23:50:03.158 30143-30351 Mirage                  com.aryan.mirage                     D  edgeQuad: area=94226 aspect=1.60 hue=50 sat=5 skin=false
+2026-11-13 23:50:03.238 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=161
+2026-11-13 23:50:03.239 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=90371 aspect=1.62 hue=46 sat=3 skin=false
+2026-11-13 23:50:03.302 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=162
+2026-11-13 23:50:03.304 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=89763 aspect=1.62 hue=46 sat=2 skin=false
+2026-11-13 23:50:03.367 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=161
+2026-11-13 23:50:03.368 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=87793 aspect=1.60 hue=42 sat=2 skin=false
+2026-11-13 23:50:03.441 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=161
+2026-11-13 23:50:03.442 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=84219 aspect=1.60 hue=40 sat=2 skin=false
+2026-11-13 23:50:03.502 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=160
+2026-11-13 23:50:03.503 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=81158 aspect=1.68 hue=43 sat=2 skin=false
+2026-11-13 23:50:03.588 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=160
+2026-11-13 23:50:03.590 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=78838 aspect=1.78 hue=43 sat=2 skin=false
+2026-11-13 23:50:03.652 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=160
+2026-11-13 23:50:03.654 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=77845 aspect=1.82 hue=43 sat=2 skin=false
+2026-11-13 23:50:03.722 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=159
+2026-11-13 23:50:03.724 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=74996 aspect=1.75 hue=46 sat=5 skin=false
+2026-11-13 23:50:03.791 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=158
+2026-11-13 23:50:03.793 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=73448 aspect=1.81 hue=42 sat=4 skin=false
+2026-11-13 23:50:03.865 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=157
+2026-11-13 23:50:03.867 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=70946 aspect=1.89 hue=41 sat=4 skin=false
+2026-11-13 23:50:03.931 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=157
+2026-11-13 23:50:03.932 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=67557 aspect=1.92 hue=42 sat=4 skin=false
+2026-11-13 23:50:03.998 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=156
+2026-11-13 23:50:04.000 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=65331 aspect=1.97 hue=43 sat=4 skin=false
+2026-11-13 23:50:04.071 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=156
+2026-11-13 23:50:04.073 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=63839 aspect=1.99 hue=41 sat=5 skin=false
+2026-11-13 23:50:04.137 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=157
+2026-11-13 23:50:04.139 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=62522 aspect=2.07 hue=41 sat=4 skin=false
+2026-11-13 23:50:04.204 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=156
+2026-11-13 23:50:04.205 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=61089 aspect=2.37 hue=37 sat=2 skin=false
+2026-11-13 23:50:04.281 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=156
+2026-11-13 23:50:04.283 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=58805 aspect=2.37 hue=39 sat=2 skin=false
+2026-11-13 23:50:04.356 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=156
+2026-11-13 23:50:04.357 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=56145 aspect=2.45 hue=36 sat=2 skin=false
+2026-11-13 23:50:04.423 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=155
+2026-11-13 23:50:04.424 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=53891 aspect=2.56 hue=41 sat=2 skin=false
+2026-11-13 23:50:04.493 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=154
+2026-11-13 23:50:04.495 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=52418 aspect=2.87 hue=38 sat=2 skin=false
+2026-11-13 23:50:04.561 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=154
+2026-11-13 23:50:04.562 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=50812 aspect=2.76 hue=37 sat=2 skin=false
+2026-11-13 23:50:04.626 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=152
+2026-11-13 23:50:04.628 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=47965 aspect=3.29 hue=35 sat=2 skin=false
+2026-11-13 23:50:04.703 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=151
+2026-11-13 23:50:04.705 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=44921 aspect=3.48 hue=35 sat=2 skin=false
+2026-11-13 23:50:04.772 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=149
+2026-11-13 23:50:04.773 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=40933 aspect=3.78 hue=32 sat=2 skin=false
+2026-11-13 23:50:04.843 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=148
+2026-11-13 23:50:04.844 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=36883 aspect=4.27 hue=28 sat=2 skin=false
+2026-11-13 23:50:04.913 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=147
+2026-11-13 23:50:04.915 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=33375 aspect=5.00 hue=26 sat=2 skin=false
+2026-11-13 23:50:04.981 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=147
+2026-11-13 23:50:04.983 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=29781 aspect=5.80 hue=18 sat=3 skin=false
+2026-11-13 23:50:05.050 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=146
+2026-11-13 23:50:05.052 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=26171 aspect=7.86 hue=15 sat=3 skin=false
+2026-11-13 23:50:05.125 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=146
+2026-11-13 23:50:05.127 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=21451 aspect=8.87 hue=13 sat=4 skin=false
+2026-11-13 23:50:05.192 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=143
+2026-11-13 23:50:05.193 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=16117 aspect=14.10 hue=15 sat=4 skin=false
+2026-11-13 23:50:05.262 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=138
+2026-11-13 23:50:05.264 30143-30351 Mirage                  com.aryan.mirage                     D  brightBlob: area=10576 aspect=21.68 hue=23 sat=2 skin=false
+2026-11-13 23:50:05.331 30143-30351 Mirage                  com.aryan.mirage                     D  otsuThreshold=130

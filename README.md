@@ -10,9 +10,13 @@ Full spec, architecture, and build order: see [`CLAUDE.md`](CLAUDE.md).
 
 ## Status
 
-Milestone 3 (state + hidden settings) done and verified on-device. Milestone
-4 (Mode A fixed overlay) next. See [`HANDOVER.md`](HANDOVER.md) for exact
-current state and next steps.
+Milestones 1-5 done. Milestone 6 (Mode B tracked overlay) substantially
+done — detection, warp, brightness-matching, feathered blend all working
+on-device; the spec's "light noise" detail still deferred. Settings UI
+(card grid, mode/trigger, sliders, debug FPS overlay) fully wired. Milestone
+7 (fake camera chrome) blocked on the target phone's exact model. See
+[`HANDOVER.md`](HANDOVER.md) for exact current state, open questions, and
+next steps.
 
 ## Requirements
 
@@ -93,6 +97,7 @@ see [`app/src/main/assets/cards/README.md`](app/src/main/assets/cards/README.md)
 
 ## Working agreement
 
-This project is being built with Claude Code as a step-by-step guide, not an
-autopilot — see the "Working agreement for the session" section of
-[`CLAUDE.md`](CLAUDE.md) before starting a new session.
+See the "Working agreement for the session" section of
+[`CLAUDE.md`](CLAUDE.md) before starting a new session — it's been updated
+since this project started and is the current source of truth, not this
+paragraph.

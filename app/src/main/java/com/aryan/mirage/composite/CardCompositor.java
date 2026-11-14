@@ -9,6 +9,7 @@ import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfDouble;
+import org.opencv.core.MatOfPoint;
 import org.opencv.core.MatOfPoint2f;
 import org.opencv.core.Point;
 import org.opencv.core.Scalar;
@@ -102,11 +103,14 @@ public class CardCompositor {
         return result;
     }
 
-    // Mode B's warped card + its region mask, cached the same way as compositeFixed's
-    // processed card -- rebuilding these (Bitmap->Mat conversion, flip) every frame would
-    // be wasted work since the forced card doesn't change on its own between frames.
+    // A standard poker card is ~3.5in x 2.5in -- used to estimate how much of the card is
+    // actually visible when it's still entering/exiting frame (see computeSrcCorners).
+    private static final double CARD_ASPECT_HEIGHT_OVER_WIDTH = 1.4;
+
+    // Mode B's warped card, cached the same way as compositeFixed's processed card --
+    // rebuilding this (Bitmap->Mat conversion, flip) every frame would be wasted work
+    // since the forced card doesn't change on its own between frames.
     private Mat cachedCardMat;
-    private Mat cachedCardMask;
     private String cachedTrackedCardKey;
     private final Mat warpedCard = new Mat();
     private final Mat warpedMask = new Mat();
@@ -127,15 +131,17 @@ public class CardCompositor {
      * to the region it's covering, soften its edges slightly, then blend it in through a
      * feathered (soft-edged) mask instead of a hard cutout. Modifies {@code frame} in
      * place. See SPEC.md "Mode B" step 7.
+     *
+     * While the card is still entering/exiting frame (quad.isPartial()), only the
+     * corresponding slice of the fake card is warped in -- see computeSrcCorners() --
+     * so a card that's 40% revealed shows 40% of the fake one, correctly scaled, not the
+     * whole image squeezed into a quarter of its real size.
      */
     public void compositeTracked(Mat frame, Bitmap card, String cardKey, CardDetector.Quad quad) {
         updateCachedTrackedCard(card, cardKey);
 
-        MatOfPoint2f srcCorners = new MatOfPoint2f(
-                new Point(0, 0),
-                new Point(cachedCardMat.cols(), 0),
-                new Point(cachedCardMat.cols(), cachedCardMat.rows()),
-                new Point(0, cachedCardMat.rows()));
+        Point[] srcPoints = computeSrcCorners(cachedCardMat, quad);
+        MatOfPoint2f srcCorners = new MatOfPoint2f(srcPoints);
         MatOfPoint2f dstCorners = new MatOfPoint2f(
                 new Point(quad.topLeft[0], quad.topLeft[1]),
                 new Point(quad.topRight[0], quad.topRight[1]),
@@ -144,11 +150,21 @@ public class CardCompositor {
 
         Mat transform = Imgproc.getPerspectiveTransform(srcCorners, dstCorners);
         srcCorners.release();
-        dstCorners.release();
 
         Imgproc.warpPerspective(cachedCardMat, warpedCard, transform, frame.size());
-        Imgproc.warpPerspective(cachedCardMask, warpedMask, transform, frame.size());
         transform.release();
+
+        // Built directly from the destination quad, not by warping a mask -- warping a
+        // mask that's white outside the (possibly cropped) srcCorners region would let
+        // the hidden part of the card "bleed" into frame wherever the perspective
+        // transform happens to extrapolate it to. Filling the quad's own footprint
+        // directly has no such issue: the visible region is exactly the quad, full stop.
+        warpedMask.create(frame.size(), CvType.CV_8UC1);
+        warpedMask.setTo(new Scalar(0));
+        MatOfPoint dstPoly = new MatOfPoint(dstCorners.toArray());
+        Imgproc.fillConvexPoly(warpedMask, dstPoly, new Scalar(255));
+        dstPoly.release();
+        dstCorners.release();
 
         // Match brightness/contrast using the hard (unblurred) mask, so the stats reflect
         // only genuine card pixels -- not diluted by a fringe of background/card-edge
@@ -167,6 +183,67 @@ public class CardCompositor {
         Imgproc.GaussianBlur(warpedMask, featheredMask, new Size(9, 9), 0);
 
         alphaBlend(frame, warpedCard, featheredMask);
+    }
+
+    /**
+     * Which rectangle of the source card bitmap to warp. Fully visible (not isPartial())
+     * -> the whole card, same as always. Clipped on exactly one axis -> estimate how much
+     * of the card is actually showing by comparing the quad's visible dimension on that
+     * axis to what it "should" be given the other (unclipped) dimension and the card's
+     * known aspect ratio, then crop the source to just that fraction -- from whichever
+     * side is still off-screen. Clipped on two axes at once (a corner, not an edge) is a
+     * rarer case this doesn't specially handle; falls back to the whole card rather than
+     * guessing wrong.
+     */
+    private static Point[] computeSrcCorners(Mat cardMat, CardDetector.Quad quad) {
+        int cols = cardMat.cols();
+        int rows = cardMat.rows();
+
+        double top = 0, bottom = rows, left = 0, right = cols;
+
+        boolean verticalClip = quad.touchesTop ^ quad.touchesBottom;
+        boolean horizontalClip = quad.touchesLeft ^ quad.touchesRight;
+
+        if (verticalClip && !horizontalClip) {
+            double visibleWidth = avgDistance(quad.topLeft, quad.topRight, quad.bottomLeft, quad.bottomRight);
+            double visibleHeight = avgDistance(quad.topLeft, quad.bottomLeft, quad.topRight, quad.bottomRight);
+            double expectedFullHeight = visibleWidth * CARD_ASPECT_HEIGHT_OVER_WIDTH;
+            double visibleFraction = clamp01(visibleHeight / expectedFullHeight);
+            if (quad.touchesTop) {
+                // Card's top is still off-screen -- what's visible is its bottom slice.
+                top = rows * (1 - visibleFraction);
+            } else {
+                // touchesBottom: card's bottom is still off-screen -- top slice visible.
+                bottom = rows * visibleFraction;
+            }
+        } else if (horizontalClip && !verticalClip) {
+            double visibleWidth = avgDistance(quad.topLeft, quad.topRight, quad.bottomLeft, quad.bottomRight);
+            double visibleHeight = avgDistance(quad.topLeft, quad.bottomLeft, quad.topRight, quad.bottomRight);
+            double expectedFullWidth = visibleHeight / CARD_ASPECT_HEIGHT_OVER_WIDTH;
+            double visibleFraction = clamp01(visibleWidth / expectedFullWidth);
+            if (quad.touchesLeft) {
+                left = cols * (1 - visibleFraction);
+            } else {
+                right = cols * visibleFraction;
+            }
+        }
+
+        return new Point[] {
+                new Point(left, top), new Point(right, top),
+                new Point(right, bottom), new Point(left, bottom)
+        };
+    }
+
+    private static double avgDistance(double[] a1, double[] a2, double[] b1, double[] b2) {
+        return (distance(a1, a2) + distance(b1, b2)) / 2.0;
+    }
+
+    private static double distance(double[] a, double[] b) {
+        return Math.hypot(a[0] - b[0], a[1] - b[1]);
+    }
+
+    private static double clamp01(double value) {
+        return Math.max(0.1, Math.min(1.0, value));
     }
 
     /**
@@ -238,7 +315,6 @@ public class CardCompositor {
         }
         if (cachedCardMat != null) {
             cachedCardMat.release();
-            cachedCardMask.release();
         }
 
         cachedCardMat = new Mat();
@@ -247,7 +323,6 @@ public class CardCompositor {
         // mirrored (selfie-style), so a real held card would look mirrored too.
         Core.flip(cachedCardMat, cachedCardMat, 1);
 
-        cachedCardMask = new Mat(cachedCardMat.size(), CvType.CV_8UC1, new Scalar(255));
         cachedTrackedCardKey = cardKey;
     }
 }
